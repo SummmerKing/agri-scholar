@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+*.tar.gz
+.vscode/
+
+# APSIM scratch copies and logs
+scratch/
+scratch_sims/
+scratch_sims_pop_baseline/
+logs/
+*.log
+
+# Source PoP PDFs (rag_corpus.json is the processed corpus)
+Package_Of_Practices*/
+
+# Runs not included in the repo
+results/ablation_no_llm_v1/
+results/conventional_baseline/
+new_results/

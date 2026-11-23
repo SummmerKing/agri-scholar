@@ -1,0 +1,14 @@
+# Python dependencies for Agri-SCHOLAR.
+# APSIM NextGen (the `Models` executable) must also be installed and on PATH.
+numpy
+pandas
+torch
+transformers
+accelerate
+sentence-transformers
+optuna
+matplotlib
+scikit-learn
+# Only needed to rebuild the RAG corpus (build_rag.py):
+pdfplumber
+easyocr

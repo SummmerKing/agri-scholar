@@ -1,0 +1,3989 @@
+{
+  "location": "Mandya",
+  "year": 2023,
+  "gpu_id": 0,
+  "log_path": "ablation_logs/agri_sigra_20261009_112907_Mandya_2023.log",
+  "status": "ok",
+  "season_result": {
+    "location": "Mandya",
+    "year": 2023,
+    "monsoon_onset_doy": 166,
+    "preseason": {
+      "locked": {
+        "sow_doy": 174,
+        "mulch_mass": 171.0,
+        "basal_dap_kg": 146.0,
+        "tillage_fraction": 0.2
+      },
+      "caps": {
+        "max_urea_splits": 18,
+        "max_irrigation_events": 18,
+        "min_urea_dose_kg": 0.0,
+        "min_irrigation_dose_mm": 0.0,
+        "season_max_urea_kg": 9999.0,
+        "season_max_irrigation_mm": 9999.0
+      },
+      "bounds": {
+        "reflection": "Unrestricted bounds.",
+        "strategy_name": "Unrestricted",
+        "land_prep_bounds": {
+          "mulch_kg_min": 0.0,
+          "mulch_kg_max": 2000.0,
+          "basal_dap_min": 0.0,
+          "basal_dap_max": 150.0
+        },
+        "management_frequency_caps": {
+          "max_urea_splits": 18,
+          "max_irrigation_events": 18,
+          "min_urea_dose_kg": 0.0,
+          "min_irrigation_dose_mm": 0.0,
+          "season_max_urea_kg": 9999.0,
+          "season_max_irrigation_mm": 9999.0
+        }
+      },
+      "reflection_trace": [
+        {
+          "iteration": 1,
+          "reward": 26727.449999999997,
+          "yield_kg_ha": 1817,
+          "psa_bounds": {
+            "reflection": "Unrestricted bounds.",
+            "strategy_name": "Unrestricted",
+            "land_prep_bounds": {
+              "mulch_kg_min": 0.0,
+              "mulch_kg_max": 2000.0,
+              "basal_dap_min": 0.0,
+              "basal_dap_max": 150.0
+            },
+            "management_frequency_caps": {
+              "max_urea_splits": 18,
+              "max_irrigation_events": 18,
+              "min_urea_dose_kg": 0.0,
+              "min_irrigation_dose_mm": 0.0,
+              "season_max_urea_kg": 9999.0,
+              "season_max_irrigation_mm": 9999.0
+            }
+          },
+          "best_action": {
+            "sow_doy": 174,
+            "mulch_mass": 171.0,
+            "basal_dap_kg": 146.0,
+            "tillage_fraction": 0.2,
+            "n_dose_0": 0.0,
+            "w_dose_0": 0.0,
+            "n_dose_1": 0.0,
+            "w_dose_1": 0.0,
+            "n_dose_2": 0.0,
+            "w_dose_2": 0.0,
+            "n_dose_3": 0.0,
+            "w_dose_3": 0.0,
+            "n_dose_4": 0.0,
+            "w_dose_4": 0.0,
+            "n_dose_5": 0.0,
+            "w_dose_5": 0.0,
+            "n_dose_6": 0.0,
+            "w_dose_6": 0.0,
+            "n_dose_7": 0.0,
+            "w_dose_7": 0.0,
+            "n_dose_8": 0.0,
+            "w_dose_8": 0.0,
+            "n_dose_9": 0.0,
+            "w_dose_9": 0.0,
+            "n_dose_10": 0.0,
+            "w_dose_10": 0.0,
+            "n_dose_11": 0.0,
+            "w_dose_11": 0.0,
+            "n_dose_12": 0.0,
+            "w_dose_12": 0.0,
+            "n_dose_13": 0.0,
+            "w_dose_13": 0.0,
+            "n_dose_14": 0.0,
+            "w_dose_14": 0.0,
+            "n_dose_15": 0.0,
+            "w_dose_15": 0.0,
+            "n_dose_16": 0.0,
+            "w_dose_16": 0.0,
+            "n_dose_17": 0.0,
+            "w_dose_17": 0.0
+          },
+          "vfa_critique": "Yield: 1817 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.26727.45 (Revenue Rs.37975.30, Production cost Rs.4984.00, Sustainability penalty Rs.6263.85).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.394 (agronomic target >= 0.45).\nEnvironmental: 375mm cumulative drainage, 25.6kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week."
+        }
+      ],
+      "reward_breakdown": {
+        "yield_kg_ha": 1817,
+        "R_rev": 37975.299999999996,
+        "C_F": 4284.0,
+        "C_I": 0,
+        "C_L": 700.0,
+        "C_prod": 4984.0,
+        "n_F": 2,
+        "n_I": 0,
+        "P_season": 0.0,
+        "P_post": 6263.85,
+        "P_sust": 6263.85,
+        "reward": 26727.449999999997,
+        "crop_failure": false
+      }
+    },
+    "locked_actions": {
+      "sow_doy": 174,
+      "mulch_mass": 171.0,
+      "basal_dap_kg": 146.0,
+      "tillage_fraction": 0.2,
+      "n_dose_0": 0.0,
+      "w_dose_0": 0.0,
+      "n_dose_1": 0.0,
+      "w_dose_1": 0.0,
+      "n_dose_2": 0.0,
+      "w_dose_2": 0.0,
+      "n_dose_3": 0.0,
+      "w_dose_3": 0.0,
+      "n_dose_4": 0.0,
+      "w_dose_4": 0.0,
+      "n_dose_5": 0.0,
+      "w_dose_5": 0.0,
+      "n_dose_6": 195.6,
+      "w_dose_6": 5268.700000000001,
+      "n_dose_7": 0.0,
+      "w_dose_7": 0.0,
+      "n_dose_8": 0.0,
+      "w_dose_8": 8.5,
+      "n_dose_9": 0.0,
+      "w_dose_9": 0.0,
+      "n_dose_10": 0.0,
+      "w_dose_10": 266.6,
+      "n_dose_11": 0.0,
+      "w_dose_11": 0.0,
+      "n_dose_12": 0.0,
+      "w_dose_12": 38.4,
+      "n_dose_13": 0.0,
+      "w_dose_13": 0.0,
+      "n_dose_14": 0.0,
+      "w_dose_14": 0.0,
+      "n_dose_15": 0.0,
+      "w_dose_15": 0.0,
+      "n_dose_16": 0.0,
+      "w_dose_16": 0.0,
+      "n_dose_17": 0.0,
+      "w_dose_17": 0.0
+    },
+    "cap_audit": {
+      "usage": {
+        "urea_events": 1,
+        "irrig_events": 4,
+        "urea_kg": 195.6,
+        "irrig_mm": 5582.200000000001
+      },
+      "violations": [],
+      "caps": {
+        "max_urea_splits": 18,
+        "max_irrigation_events": 18,
+        "min_urea_kg": 0.0,
+        "min_irrigation_mm": 0.0,
+        "season_max_urea_kg": 9999.0,
+        "season_max_irrigation_mm": 9999.0
+      }
+    },
+    "final_yield_kg_ha": 10405,
+    "final_reward_breakdown": {
+      "yield_kg_ha": 10405,
+      "R_rev": 217464.49999999997,
+      "C_F": 6834.624,
+      "C_I": 13955.500000000002,
+      "C_L": 2450.0,
+      "C_prod": 23240.124000000003,
+      "n_F": 3,
+      "n_I": 4,
+      "P_season": 3178.0,
+      "P_post": 6053.650000000001,
+      "P_sust": 9231.650000000001,
+      "reward": 184992.72599999997,
+      "crop_failure": false
+    },
+    "final_diagnostics": {
+      "status": "success",
+      "yield_kg_ha": 10405,
+      "harvest_index": 0.692,
+      "peak_biomass_g_m2": 1503.65,
+      "veg_water_stress": 0.0,
+      "veg_n_stress": 0.0,
+      "veg_days": 118,
+      "repro_water_stress": 0.0,
+      "repro_n_stress": 0.0,
+      "repro_days": 5,
+      "crop_lifespan_days": 123,
+      "weekly_stress": {
+        "week_0": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 0
+        },
+        "week_1": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 4
+        },
+        "week_2": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_3": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_4": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_5": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_6": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_7": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_8": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_9": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_10": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_11": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_12": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_13": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_14": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_15": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 8
+        },
+        "week_16": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 7
+        },
+        "week_17": {
+          "water_stress": 0.0,
+          "n_stress": 0.0,
+          "days": 0
+        }
+      },
+      "total_drainage_mm": 342.66,
+      "total_leach_no3_nh4": 36.55,
+      "waterlogging_index": 0.0,
+      "n_oversupply_index": 1.589,
+      "soc_loss_index": 0.0
+    },
+    "weekly_log": {
+      "week_0": {
+        "doy": 166,
+        "analog_year": 2020,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 0\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)\n---\nArea and distribution \uf0d8 Ragi is widely cultivated in India, Africa, Sri Lanka, Malaysia, China and Japan. \uf0d8 In India, Karnataka, Tamilnadu, Andrapradesh, Maharashtra, Orissa, Bihar, Jharkand etc. \uf0d8 In India it is cultivated in an area of 2.50 m.ha with a production of 2.20 mt. \uf0d8 Karnataka is the major state for finger millet production in India, accounts for 55.6% of the area and 60.7% of production in the country. \uf0d8 In Karnataka, Area: 9.16 lakh ha, Production: 14.02 lakh tones and productivity of 1611 kg/ha. \uf0d8 It is mainly grown in Haveri, Bellary, Chitradurga, Mandya, Mysore and Bangalore districts.",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "9": 100.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 0,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 4325 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.75879.90 (Revenue Rs.90392.50, Production cost Rs.6638.00, Sustainability penalty Rs.7874.60).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.608 (agronomic target >= 0.45).\nEnvironmental: 375mm cumulative drainage, 26.6kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.",
+        "reward_breakdown": {
+          "yield_kg_ha": 4325,
+          "R_rev": 90392.5,
+          "C_F": 5588.0,
+          "C_I": 0,
+          "C_L": 1050.0,
+          "C_prod": 6638.0,
+          "n_F": 3,
+          "n_I": 0,
+          "P_season": 1584.0,
+          "P_post": 6290.6,
+          "P_sust": 7874.6,
+          "reward": 75879.9,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 4325,
+          "harvest_index": 0.6079,
+          "peak_biomass_g_m2": 711.46,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 120,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 126,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 7
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 7
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 374.99,
+          "total_leach_no3_nh4": 26.63,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 0.792,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 75879.9,
+            "yield_kg_ha": 4325,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 0,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 4325 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.75879.90 (Revenue Rs.90392.50, Production cost Rs.6638.00, Sustainability penalty Rs.7874.60).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.608 (agronomic target >= 0.45).\nEnvironmental: 375mm cumulative drainage, 26.6kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_1": {
+        "doy": 181,
+        "analog_year": 1980,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 1\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "9": 100.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 1,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 8772 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.174034.85 (Revenue Rs.183334.80, Production cost Rs.6638.00, Sustainability penalty Rs.2661.95).\nSown on: 23-Jun.\n[STRESS] Water: 0.1 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.641 (agronomic target >= 0.45).\nEnvironmental: 67mm cumulative drainage, 4.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 4447 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 8772,
+          "R_rev": 183334.8,
+          "C_F": 5588.0,
+          "C_I": 0,
+          "C_L": 1050.0,
+          "C_prod": 6638.0,
+          "n_F": 3,
+          "n_I": 0,
+          "P_season": 1540.0,
+          "P_post": 1121.95,
+          "P_sust": 2661.95,
+          "reward": 174034.84999999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 8772,
+          "harvest_index": 0.641,
+          "peak_biomass_g_m2": 1368.57,
+          "veg_water_stress": 0.067,
+          "veg_n_stress": 0.0,
+          "veg_days": 124,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 129,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 5
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.067,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            }
+          },
+          "total_drainage_mm": 66.98,
+          "total_leach_no3_nh4": 4.69,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 0.77,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 174034.84999999998,
+            "yield_kg_ha": 8772,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 1,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 8772 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.174034.85 (Revenue Rs.183334.80, Production cost Rs.6638.00, Sustainability penalty Rs.2661.95).\nSown on: 23-Jun.\n[STRESS] Water: 0.1 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.641 (agronomic target >= 0.45).\nEnvironmental: 67mm cumulative drainage, 4.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 4447 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_2": {
+        "doy": 188,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 2\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\n\u00d8 There are two types of nitrogen fertilizers 1. Ammonical nitrogen fertilizers: Urea, Ammonium sulphate. 2. Nitrate nitrogen fertilizer: Calcium ammonium nitrate (CAN) Ammonium sulphate nitrate (ASN) \u00d8 Ammonical form of fertilizers contain more nitrogen \u00d8 Less hygroscopic in nature \u00d8 Not readily available to the crops \u00d8 Takes more time for conversion in to nitrate form\n---\nMonth: December | Rainfall: 0.0 | Rainy Days: 0 | Temprature: 27.6 | RH: 79.3 | Mean RH (%): 65.6 | Sun Shine: 8.2 | Evaporati on: - | Wind Speed: -\nS. No.: 7 | Place: Mandya | Month: August | Rainfall: 87.4 | Rainy Days: - | Temprature: 28.2 | RH: 83.1 | Mean RH (%): 68.7 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: September | Rainfall: 64 | Rainy Days: - | Temprature: 29.5 | RH: 83.1 | Mean RH (%): 69.3 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: October | Rainfall: 180 | Rainy Days: - | Temprature: 28.9 | RH: 85.4 | Mean RH (%): 71.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: November | Rainfall: 7 | Rainy Days: - | Temprature: 27.7 | RH: 81.7 | Mean RH (%): 69.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: December | Rainfall: 0 | Rainy Days: - | Temprature: 27.9 | RH: 82.1 | Mean RH (%): 69.0 | Sun Shine: - | Evaporati on: - | Wind Speed: -",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "9": 100.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 2,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 6232 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.120249.30 (Revenue Rs.130248.80, Production cost Rs.6638.00, Sustainability penalty Rs.3361.50).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.588 (agronomic target >= 0.45).\nEnvironmental: 106mm cumulative drainage, 7.4kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 6232,
+          "R_rev": 130248.79999999999,
+          "C_F": 5588.0,
+          "C_I": 0,
+          "C_L": 1050.0,
+          "C_prod": 6638.0,
+          "n_F": 3,
+          "n_I": 0,
+          "P_season": 1592.0,
+          "P_post": 1769.5,
+          "P_sust": 3361.5,
+          "reward": 120249.29999999999,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 6232,
+          "harvest_index": 0.5877,
+          "peak_biomass_g_m2": 1060.41,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 105.6,
+          "total_leach_no3_nh4": 7.42,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 0.796,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 120249.29999999999,
+            "yield_kg_ha": 6232,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 2,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 6232 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.120249.30 (Revenue Rs.130248.80, Production cost Rs.6638.00, Sustainability penalty Rs.3361.50).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.588 (agronomic target >= 0.45).\nEnvironmental: 106mm cumulative drainage, 7.4kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_3": {
+        "doy": 195,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 3\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nWhy ammonical nitrogen fertilizers are more suited for paddy cultivation? \u00d8 Rice is the only crop which can utilize the ammonical nitrogen. \u00d8 They are less readily available to plants than nitrate fertilizers. The ammonical nitrogen has to nitrify in the soil and be converted into nitrate before it can be taken up by plants. \u00d8 The ammonia in ammonium sulphate is fixed (adsorbed) by the soil immediately after application and it is not leached away like nitrates. \u00d8 Hence, this group of fertilizers may be used in basal application and top dressing.\n---\nMonth: December | Rainfall: 0.0 | Rainy Days: 0 | Temprature: 27.6 | RH: 79.3 | Mean RH (%): 65.6 | Sun Shine: 8.2 | Evaporati on: - | Wind Speed: -\nS. No.: 7 | Place: Mandya | Month: August | Rainfall: 87.4 | Rainy Days: - | Temprature: 28.2 | RH: 83.1 | Mean RH (%): 68.7 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: September | Rainfall: 64 | Rainy Days: - | Temprature: 29.5 | RH: 83.1 | Mean RH (%): 69.3 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: October | Rainfall: 180 | Rainy Days: - | Temprature: 28.9 | RH: 85.4 | Mean RH (%): 71.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: November | Rainfall: 7 | Rainy Days: - | Temprature: 27.7 | RH: 81.7 | Mean RH (%): 69.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: December | Rainfall: 0 | Rainy Days: - | Temprature: 27.9 | RH: 82.1 | Mean RH (%): 69.0 | Sun Shine: - | Evaporati on: - | Wind Speed: -",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "5": 335.0,
+          "9": 45.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 3,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 6356 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.114321.30 (Revenue Rs.132840.40, Production cost Rs.10639.20, Sustainability penalty Rs.7879.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.602 (agronomic target >= 0.45).\nEnvironmental: 104mm cumulative drainage, 7.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 124 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 6356,
+          "R_rev": 132840.4,
+          "C_F": 9239.199999999999,
+          "C_I": 0,
+          "C_L": 1400.0,
+          "C_prod": 10639.199999999999,
+          "n_F": 4,
+          "n_I": 0,
+          "P_season": 6128.0,
+          "P_post": 1751.8999999999999,
+          "P_sust": 7879.9,
+          "reward": 114321.3,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 6356,
+          "harvest_index": 0.602,
+          "peak_biomass_g_m2": 1055.76,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 118,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 124,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 103.96,
+          "total_leach_no3_nh4": 7.7,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 3.064,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 114321.3,
+            "yield_kg_ha": 6356,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 3,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 6356 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.114321.30 (Revenue Rs.132840.40, Production cost Rs.10639.20, Sustainability penalty Rs.7879.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.602 (agronomic target >= 0.45).\nEnvironmental: 104mm cumulative drainage, 7.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 124 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_4": {
+        "doy": 202,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 4\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nWhy ammonical nitrogen fertilizers are more suited for paddy cultivation? \u00d8 Rice is the only crop which can utilize the ammonical nitrogen. \u00d8 They are less readily available to plants than nitrate fertilizers. The ammonical nitrogen has to nitrify in the soil and be converted into nitrate before it can be taken up by plants. \u00d8 The ammonia in ammonium sulphate is fixed (adsorbed) by the soil immediately after application and it is not leached away like nitrates. \u00d8 Hence, this group of fertilizers may be used in basal application and top dressing.\n---\nMonth: December | Rainfall: 0.0 | Rainy Days: 0 | Temprature: 27.6 | RH: 79.3 | Mean RH (%): 65.6 | Sun Shine: 8.2 | Evaporati on: - | Wind Speed: -\nS. No.: 7 | Place: Mandya | Month: August | Rainfall: 87.4 | Rainy Days: - | Temprature: 28.2 | RH: 83.1 | Mean RH (%): 68.7 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: September | Rainfall: 64 | Rainy Days: - | Temprature: 29.5 | RH: 83.1 | Mean RH (%): 69.3 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: October | Rainfall: 180 | Rainy Days: - | Temprature: 28.9 | RH: 85.4 | Mean RH (%): 71.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: November | Rainfall: 7 | Rainy Days: - | Temprature: 27.7 | RH: 81.7 | Mean RH (%): 69.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: December | Rainfall: 0 | Rainy Days: - | Temprature: 27.9 | RH: 82.1 | Mean RH (%): 69.0 | Sun Shine: - | Evaporati on: - | Wind Speed: -",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "5": 335.0,
+          "9": 45.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 4,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 5444 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.94271.35 (Revenue Rs.113779.60, Production cost Rs.10639.20, Sustainability penalty Rs.8869.05).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.593 (agronomic target >= 0.45).\nEnvironmental: 164mm cumulative drainage, 13.2kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 5444,
+          "R_rev": 113779.59999999999,
+          "C_F": 9239.199999999999,
+          "C_I": 0,
+          "C_L": 1400.0,
+          "C_prod": 10639.199999999999,
+          "n_F": 4,
+          "n_I": 0,
+          "P_season": 6078.0,
+          "P_post": 2791.05,
+          "P_sust": 8869.05,
+          "reward": 94271.34999999999,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 5444,
+          "harvest_index": 0.5932,
+          "peak_biomass_g_m2": 917.83,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 164.02,
+          "total_leach_no3_nh4": 13.23,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 3.039,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 94271.34999999999,
+            "yield_kg_ha": 5444,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 4,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 5444 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.94271.35 (Revenue Rs.113779.60, Production cost Rs.10639.20, Sustainability penalty Rs.8869.05).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.593 (agronomic target >= 0.45).\nEnvironmental: 164mm cumulative drainage, 13.2kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_5": {
+        "doy": 209,
+        "analog_year": 2016,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 5\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nWhy ammonical nitrogen fertilizers are more suited for paddy cultivation? \u00d8 Rice is the only crop which can utilize the ammonical nitrogen. \u00d8 They are less readily available to plants than nitrate fertilizers. The ammonical nitrogen has to nitrify in the soil and be converted into nitrate before it can be taken up by plants. \u00d8 The ammonia in ammonium sulphate is fixed (adsorbed) by the soil immediately after application and it is not leached away like nitrates. \u00d8 Hence, this group of fertilizers may be used in basal application and top dressing.\n---\nMonth: December | Rainfall: 0.0 | Rainy Days: 0 | Temprature: 27.6 | RH: 79.3 | Mean RH (%): 65.6 | Sun Shine: 8.2 | Evaporati on: - | Wind Speed: -\nS. No.: 7 | Place: Mandya | Month: August | Rainfall: 87.4 | Rainy Days: - | Temprature: 28.2 | RH: 83.1 | Mean RH (%): 68.7 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: September | Rainfall: 64 | Rainy Days: - | Temprature: 29.5 | RH: 83.1 | Mean RH (%): 69.3 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: October | Rainfall: 180 | Rainy Days: - | Temprature: 28.9 | RH: 85.4 | Mean RH (%): 71.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: November | Rainfall: 7 | Rainy Days: - | Temprature: 27.7 | RH: 81.7 | Mean RH (%): 69.1 | Sun Shine: - | Evaporati on: - | Wind Speed: -\nMonth: December | Rainfall: 0 | Rainy Days: - | Temprature: 27.9 | RH: 82.1 | Mean RH (%): 69.0 | Sun Shine: - | Evaporati on: - | Wind Speed: -",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 18,
+          "irrig_events_left": 18,
+          "urea_kg_left": 9999.0,
+          "irrig_mm_left": 9999.0,
+          "urea_events": 0,
+          "irrig_events": 0,
+          "urea_kg": 0.0,
+          "irrig_mm": 0.0
+        },
+        "tentative_urea_plan": {
+          "7": 105.0,
+          "17": 165.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 5,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 7596 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.143008.70 (Revenue Rs.158756.40, Production cost Rs.9204.80, Sustainability penalty Rs.6542.90).\nSown on: 23-Jun.\n[STRESS] Water: 2.1 vegetative-days + 0.2 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.630 (agronomic target >= 0.45).\nEnvironmental: 142mm cumulative drainage, 10.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 2152 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 7596,
+          "R_rev": 158756.4,
+          "C_F": 7804.799999999999,
+          "C_I": 0,
+          "C_L": 1400.0,
+          "C_prod": 9204.8,
+          "n_F": 4,
+          "n_I": 0,
+          "P_season": 4148.0,
+          "P_post": 2394.9,
+          "P_sust": 6542.9,
+          "reward": 143008.7,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 7596,
+          "harvest_index": 0.6305,
+          "peak_biomass_g_m2": 1204.63,
+          "veg_water_stress": 2.065,
+          "veg_n_stress": 0.0,
+          "veg_days": 125,
+          "repro_water_stress": 0.232,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 130,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.375,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 1.922,
+              "n_stress": 0.0,
+              "days": 6
+            }
+          },
+          "total_drainage_mm": 141.86,
+          "total_leach_no3_nh4": 10.68,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 2.074,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 143008.7,
+            "yield_kg_ha": 7596,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 5,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 7596 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.143008.70 (Revenue Rs.158756.40, Production cost Rs.9204.80, Sustainability penalty Rs.6542.90).\nSown on: 23-Jun.\n[STRESS] Water: 2.1 vegetative-days + 0.2 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.630 (agronomic target >= 0.45).\nEnvironmental: 142mm cumulative drainage, 10.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 2152 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_6": {
+        "doy": 216,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 6\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 195.6,
+          "irrigation_mm": 5268.700000000001
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 17,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4730.299999999999,
+          "urea_events": 1,
+          "irrig_events": 1,
+          "urea_kg": 195.6,
+          "irrig_mm": 5268.700000000001
+        },
+        "tentative_urea_plan": {
+          "17": 180.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 6,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9999.0
+              ],
+              "irrig_window": [
+                1.0,
+                9999.0
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 5960 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.91435.28 (Revenue Rs.124564.00, Production cost Rs.24103.57, Sustainability penalty Rs.9025.15).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.594 (agronomic target >= 0.45).\nEnvironmental: 335mm cumulative drainage, 34.9kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 5960,
+          "R_rev": 124563.99999999999,
+          "C_F": 9181.824,
+          "C_I": 13171.750000000002,
+          "C_L": 1750.0,
+          "C_prod": 24103.574,
+          "n_F": 4,
+          "n_I": 1,
+          "P_season": 3128.0,
+          "P_post": 5897.15,
+          "P_sust": 9025.15,
+          "reward": 91435.27599999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 5960,
+          "harvest_index": 0.5942,
+          "peak_biomass_g_m2": 1003.1,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 335.01,
+          "total_leach_no3_nh4": 34.88,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 91435.27599999998,
+            "yield_kg_ha": 5960,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 6,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9999.0
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    9999.0
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 195.6,
+              "irrig": 5268.700000000001
+            },
+            "vfa_critique": "Yield: 5960 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.91435.28 (Revenue Rs.124564.00, Production cost Rs.24103.57, Sustainability penalty Rs.9025.15).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.594 (agronomic target >= 0.45).\nEnvironmental: 335mm cumulative drainage, 34.9kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_7": {
+        "doy": 223,
+        "analog_year": 2019,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 7\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nWhy ammonical nitrogen fertilizers are more suited for paddy cultivation? \u00d8 Rice is the only crop which can utilize the ammonical nitrogen. \u00d8 They are less readily available to plants than nitrate fertilizers. The ammonical nitrogen has to nitrify in the soil and be converted into nitrate before it can be taken up by plants. \u00d8 The ammonia in ammonium sulphate is fixed (adsorbed) by the soil immediately after application and it is not leached away like nitrates. \u00d8 Hence, this group of fertilizers may be used in basal application and top dressing.\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 17,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4730.299999999999,
+          "urea_events": 1,
+          "irrig_events": 1,
+          "urea_kg": 195.6,
+          "irrig_mm": 5268.700000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 7,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4730.299999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 8519 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.148567.18 (Revenue Rs.178047.10, Production cost Rs.21406.37, Sustainability penalty Rs.8073.55).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.651 (agronomic target >= 0.45).\nEnvironmental: 285mm cumulative drainage, 26.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 2559 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 8519,
+          "R_rev": 178047.09999999998,
+          "C_F": 6834.624,
+          "C_I": 13171.750000000002,
+          "C_L": 1400.0,
+          "C_prod": 21406.374000000003,
+          "n_F": 3,
+          "n_I": 1,
+          "P_season": 3128.0,
+          "P_post": 4945.55,
+          "P_sust": 8073.55,
+          "reward": 148567.17599999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 8519,
+          "harvest_index": 0.6515,
+          "peak_biomass_g_m2": 1307.61,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 285.17,
+          "total_leach_no3_nh4": 26.72,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 148567.17599999998,
+            "yield_kg_ha": 8519,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 7,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4730.299999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 8519 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.148567.18 (Revenue Rs.178047.10, Production cost Rs.21406.37, Sustainability penalty Rs.8073.55).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.651 (agronomic target >= 0.45).\nEnvironmental: 285mm cumulative drainage, 26.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 2559 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_8": {
+        "doy": 230,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 8\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 8.5
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 16,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4721.799999999999,
+          "urea_events": 1,
+          "irrig_events": 2,
+          "urea_kg": 195.6,
+          "irrig_mm": 5277.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 8,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4730.299999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 9645 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.172345.93 (Revenue Rs.201580.50, Production cost Rs.21777.62, Sustainability penalty Rs.7456.95).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.687 (agronomic target >= 0.45).\nEnvironmental: 251mm cumulative drainage, 22.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 1126 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 9645,
+          "R_rev": 201580.5,
+          "C_F": 6834.624,
+          "C_I": 13193.000000000002,
+          "C_L": 1750.0,
+          "C_prod": 21777.624000000003,
+          "n_F": 3,
+          "n_I": 2,
+          "P_season": 3128.0,
+          "P_post": 4328.95,
+          "P_sust": 7456.95,
+          "reward": 172345.92599999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 9645,
+          "harvest_index": 0.6869,
+          "peak_biomass_g_m2": 1404.18,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 251.13,
+          "total_leach_no3_nh4": 22.48,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 172345.92599999998,
+            "yield_kg_ha": 9645,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 8,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4730.299999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 8.5
+            },
+            "vfa_critique": "Yield: 9645 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.172345.93 (Revenue Rs.201580.50, Production cost Rs.21777.62, Sustainability penalty Rs.7456.95).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.687 (agronomic target >= 0.45).\nEnvironmental: 251mm cumulative drainage, 22.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 1126 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_9": {
+        "doy": 237,
+        "analog_year": 2010,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 9\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 16,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4721.799999999999,
+          "urea_events": 1,
+          "irrig_events": 2,
+          "urea_kg": 195.6,
+          "irrig_mm": 5277.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 9,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4721.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 11177 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.204369.98 (Revenue Rs.233599.30, Production cost Rs.21777.62, Sustainability penalty Rs.7451.70).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.706 (agronomic target >= 0.45).\nEnvironmental: 251mm cumulative drainage, 22.4kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 1532 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 11177,
+          "R_rev": 233599.3,
+          "C_F": 6834.624,
+          "C_I": 13193.000000000002,
+          "C_L": 1750.0,
+          "C_prod": 21777.624000000003,
+          "n_F": 3,
+          "n_I": 2,
+          "P_season": 3128.0,
+          "P_post": 4323.700000000001,
+          "P_sust": 7451.700000000001,
+          "reward": 204369.97599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 11177,
+          "harvest_index": 0.7057,
+          "peak_biomass_g_m2": 1583.94,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 250.83,
+          "total_leach_no3_nh4": 22.45,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 204369.97599999997,
+            "yield_kg_ha": 11177,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 9,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4721.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 11177 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.204369.98 (Revenue Rs.233599.30, Production cost Rs.21777.62, Sustainability penalty Rs.7451.70).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.706 (agronomic target >= 0.45).\nEnvironmental: 251mm cumulative drainage, 22.4kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 1532 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_10": {
+        "doy": 244,
+        "analog_year": 1990,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 10\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 266.6
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 15,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4455.199999999999,
+          "urea_events": 1,
+          "irrig_events": 3,
+          "urea_kg": 195.6,
+          "irrig_mm": 5543.800000000001
+        },
+        "tentative_urea_plan": {
+          "15": 100.0
+        },
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 10,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4721.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10544 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.185709.18 (Revenue Rs.220369.60, Production cost Rs.24448.12, Sustainability penalty Rs.10212.30).\nSown on: 23-Jun.\n[STRESS] Water: 0.7 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.687 (agronomic target >= 0.45).\nEnvironmental: 310mm cumulative drainage, 30.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 10544,
+          "R_rev": 220369.59999999998,
+          "C_F": 8138.624,
+          "C_I": 13859.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 24448.124000000003,
+          "n_F": 4,
+          "n_I": 3,
+          "P_season": 4800.0,
+          "P_post": 5412.3,
+          "P_sust": 10212.3,
+          "reward": 185709.17599999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10544,
+          "harvest_index": 0.6874,
+          "peak_biomass_g_m2": 1533.87,
+          "veg_water_stress": 0.726,
+          "veg_n_stress": 0.0,
+          "veg_days": 118,
+          "repro_water_stress": 0.002,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 123,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.677,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.051,
+              "n_stress": 0.0,
+              "days": 7
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 309.62,
+          "total_leach_no3_nh4": 30.72,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 2.4,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 185709.17599999998,
+            "yield_kg_ha": 10544,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 10,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4721.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 266.6
+            },
+            "vfa_critique": "Yield: 10544 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.185709.18 (Revenue Rs.220369.60, Production cost Rs.24448.12, Sustainability penalty Rs.10212.30).\nSown on: 23-Jun.\n[STRESS] Water: 0.7 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.687 (agronomic target >= 0.45).\nEnvironmental: 310mm cumulative drainage, 30.7kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_11": {
+        "doy": 251,
+        "analog_year": 2017,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 11\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 15,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4455.199999999999,
+          "urea_events": 1,
+          "irrig_events": 3,
+          "urea_kg": 195.6,
+          "irrig_mm": 5543.800000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 11,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4455.199999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 9814 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.172464.58 (Revenue Rs.205112.60, Production cost Rs.22794.12, Sustainability penalty Rs.9853.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.680 (agronomic target >= 0.45).\nEnvironmental: 377mm cumulative drainage, 42.8kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 9814,
+          "R_rev": 205112.59999999998,
+          "C_F": 6834.624,
+          "C_I": 13859.500000000002,
+          "C_L": 2100.0,
+          "C_prod": 22794.124000000003,
+          "n_F": 3,
+          "n_I": 3,
+          "P_season": 3128.0,
+          "P_post": 6725.900000000001,
+          "P_sust": 9853.900000000001,
+          "reward": 172464.57599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 9814,
+          "harvest_index": 0.6796,
+          "peak_biomass_g_m2": 1444.05,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 377.11,
+          "total_leach_no3_nh4": 42.77,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 172464.57599999997,
+            "yield_kg_ha": 9814,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 11,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4455.199999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 9814 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.172464.58 (Revenue Rs.205112.60, Production cost Rs.22794.12, Sustainability penalty Rs.9853.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.680 (agronomic target >= 0.45).\nEnvironmental: 377mm cumulative drainage, 42.8kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_12": {
+        "doy": 258,
+        "analog_year": 2017,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 12\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 38.4
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 12,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4455.199999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 9959 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.174802.48 (Revenue Rs.208143.10, Production cost Rs.23240.12, Sustainability penalty Rs.10100.50).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.683 (agronomic target >= 0.45).\nEnvironmental: 388mm cumulative drainage, 45.0kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 145 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 9959,
+          "R_rev": 208143.09999999998,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3152.0,
+          "P_post": 6948.5,
+          "P_sust": 10100.5,
+          "reward": 174802.47599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 9959,
+          "harvest_index": 0.6835,
+          "peak_biomass_g_m2": 1457.09,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 118,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 124,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 388.25,
+          "total_leach_no3_nh4": 44.99,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.576,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 174802.47599999997,
+            "yield_kg_ha": 9959,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 12,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4455.199999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 38.4
+            },
+            "vfa_critique": "Yield: 9959 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.174802.48 (Revenue Rs.208143.10, Production cost Rs.23240.12, Sustainability penalty Rs.10100.50).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.683 (agronomic target >= 0.45).\nEnvironmental: 388mm cumulative drainage, 45.0kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 145 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_13": {
+        "doy": 265,
+        "analog_year": 2017,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 13\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 13,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4416.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10114 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.178773.03 (Revenue Rs.211382.60, Production cost Rs.23240.12, Sustainability penalty Rs.9369.45).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.686 (agronomic target >= 0.45).\nEnvironmental: 351mm cumulative drainage, 38.1kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 155 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 10114,
+          "R_rev": 211382.59999999998,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3152.0,
+          "P_post": 6217.45,
+          "P_sust": 9369.45,
+          "reward": 178773.02599999995,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10114,
+          "harvest_index": 0.686,
+          "peak_biomass_g_m2": 1474.46,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 124,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 351.03,
+          "total_leach_no3_nh4": 38.08,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.576,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 178773.02599999995,
+            "yield_kg_ha": 10114,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 13,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4416.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 10114 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.178773.03 (Revenue Rs.211382.60, Production cost Rs.23240.12, Sustainability penalty Rs.9369.45).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.686 (agronomic target >= 0.45).\nEnvironmental: 351mm cumulative drainage, 38.1kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 155 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_14": {
+        "doy": 272,
+        "analog_year": 1991,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 14\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 14,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4416.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10472 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.186445.78 (Revenue Rs.218864.80, Production cost Rs.23240.12, Sustainability penalty Rs.9178.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.693 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 358 kg/ha over the previous reflection iteration.",
+        "reward_breakdown": {
+          "yield_kg_ha": 10472,
+          "R_rev": 218864.8,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3128.0,
+          "P_post": 6050.9,
+          "P_sust": 9178.9,
+          "reward": 186445.77599999998,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10472,
+          "harvest_index": 0.6927,
+          "peak_biomass_g_m2": 1511.74,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 6,
+          "crop_lifespan_days": 125,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 1
+            }
+          },
+          "total_drainage_mm": 342.51,
+          "total_leach_no3_nh4": 36.53,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.564,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 186445.77599999998,
+            "yield_kg_ha": 10472,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 14,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4416.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 10472 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.186445.78 (Revenue Rs.218864.80, Production cost Rs.23240.12, Sustainability penalty Rs.9178.90).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.693 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nImproved by 358 kg/ha over the previous reflection iteration.",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_15": {
+        "doy": 279,
+        "analog_year": 1991,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 15\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 15,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4416.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10430 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.185540.08 (Revenue Rs.217987.00, Production cost Rs.23240.12, Sustainability penalty Rs.9206.80).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.693 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.6kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 10430,
+          "R_rev": 217986.99999999997,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3152.0,
+          "P_post": 6054.8,
+          "P_sust": 9206.8,
+          "reward": 185540.07599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10430,
+          "harvest_index": 0.6925,
+          "peak_biomass_g_m2": 1506.15,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 119,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 124,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 342.72,
+          "total_leach_no3_nh4": 36.56,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.576,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 185540.07599999997,
+            "yield_kg_ha": 10430,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 15,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4416.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 10430 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.185540.08 (Revenue Rs.217987.00, Production cost Rs.23240.12, Sustainability penalty Rs.9206.80).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.693 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.6kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_16": {
+        "doy": 286,
+        "analog_year": 1991,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 16\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 16,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4416.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10405 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.184992.73 (Revenue Rs.217464.50, Production cost Rs.23240.12, Sustainability penalty Rs.9231.65).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.692 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 10405,
+          "R_rev": 217464.49999999997,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3178.0,
+          "P_post": 6053.650000000001,
+          "P_sust": 9231.650000000001,
+          "reward": 184992.72599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10405,
+          "harvest_index": 0.692,
+          "peak_biomass_g_m2": 1503.65,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 118,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 123,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 7
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 342.66,
+          "total_leach_no3_nh4": 36.55,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.589,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 184992.72599999997,
+            "yield_kg_ha": 10405,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 16,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4416.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 10405 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.184992.73 (Revenue Rs.217464.50, Production cost Rs.23240.12, Sustainability penalty Rs.9231.65).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.692 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      },
+      "week_17": {
+        "doy": 293,
+        "analog_year": 1991,
+        "context_bundle": "LOCATION: Mandya | YEAR: 2023 | DECISION WEEK: 17\nWEATHER CONTEXT:\nObserved through 01-Jan: Pre-monsoon (Jan-May) rainfall 62mm. Kharif-to-date total: 465mm. Monthly distribution so far: []. Longest dry spell so far: 27 consecutive days. Major storms so far: None.\n\nRETRIEVED AGRONOMIC GUIDANCE (hybrid sparse+dense retrieval, top 3):\n\u00d8 The fertilizer containing nitrate such as CAN, ASN are more susceptible to loss of nitrogen through leaching and denitrification compared to ammonical form of nitrogen fertilizers containing no nitrate. \u00d8 The use of nitrate fertilizers should therefore be avoided in paddy.\n---\nP-19 MPT 2. Assessment of avoidable yield losses due to major diseases of maize The avoidable yield loss trials were conducted using paired plot technique with ten replications under sick plot/ artificial epiphytotic conditions. The avoidable yield losses were recorded up to 10.6-31.9 per cent due to TLB (Bajaura, Rahuri, Dharwad), 31.43-37.12 per cent due to BLSB (Karnal, Kalyani) and 47.07 per cent due to FSR (Kalyani) (Table no. 10-15). MPT 3. Trap nursery trial for disease incidence The trap nursery trial was conducted to find out the occurrence of disease and/or any new disease on a set of susceptible maize inbred lines at Almora, Bajaura, Coimbatore, Delhi, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Karnal, Kalyani, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur locations (Table no. 16-32). MPT 4. Disease survey and surveillance in different maize growing areas Survey and surveillance were done in the mandate maize growing areas of Bajaura, Coimbatore, Dharwad, Dhaulakuan, Dholi, Hyderabad, Imphal, Kalyani, Karnal, Ludhiana, Mandya, Pantnagar, Peddapuram, Rahuri and Udaipur centres. During survey and surveillance of diseases, scoring was carried out along with the disease incidence in prescribed proforma (Table no. 33-47). MPT 5. Efficacy of fungicides/chemicals in management of maize diseases Evaluation of newer fungicides/ chemicals were undertaken at Kalyani, Pantnagar, Dharwad, Mandya and Dholi for the management of FSR; BLSB; Common rust; Polysora rust; and BLSB disease, respectively. The results revealed that foliar spray of Fluopyrum 21.37% w/w + Trifloxystrobin 21.37%\n---\nP-111 DAIS: Days after 1st Spray; DAIIS: Days after 2nd Spray; PDC: Percent Disease Control; PAL: Percent Avoidable Loss Table 50. Evaluation of new fungicide molecules for the management of Common Rust at Dharwad during Kharif 2025 (Cultivar: DKC 9126) *Arcsine transformed values; PDI: Per cent disease index; PDC: Per cent disease control Table 51. Efficacy of fungicides in control of Polysora Rust disease of maize at Mandya during Kharif 2025 (Hybrid CM- 202)",
+        "issued_advisory": {
+          "urea_kg": 0.0,
+          "irrigation_mm": 0.0
+        },
+        "season_budget_after": {
+          "urea_splits_left": 17,
+          "irrig_events_left": 14,
+          "urea_kg_left": 9803.4,
+          "irrig_mm_left": 4416.799999999999,
+          "urea_events": 1,
+          "irrig_events": 4,
+          "urea_kg": 195.6,
+          "irrig_mm": 5582.200000000001
+        },
+        "tentative_urea_plan": {},
+        "best_strategy": {
+          "reflection": "Unrestricted bounds.",
+          "strategy_name": "Unrestricted",
+          "in_season_weeks": [
+            {
+              "week_index": 17,
+              "urea_min": 0.0,
+              "urea_max": 9999.0,
+              "irrig_min": 0.0,
+              "irrig_max": 9999.0,
+              "reasoning": "Unrestricted",
+              "urea_window": [
+                1.0,
+                9803.4
+              ],
+              "irrig_window": [
+                1.0,
+                4416.799999999999
+              ]
+            }
+          ]
+        },
+        "vfa_critique": "Yield: 10405 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.184992.73 (Revenue Rs.217464.50, Production cost Rs.23240.12, Sustainability penalty Rs.9231.65).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.692 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+        "reward_breakdown": {
+          "yield_kg_ha": 10405,
+          "R_rev": 217464.49999999997,
+          "C_F": 6834.624,
+          "C_I": 13955.500000000002,
+          "C_L": 2450.0,
+          "C_prod": 23240.124000000003,
+          "n_F": 3,
+          "n_I": 4,
+          "P_season": 3178.0,
+          "P_post": 6053.650000000001,
+          "P_sust": 9231.650000000001,
+          "reward": 184992.72599999997,
+          "crop_failure": false
+        },
+        "diagnostics": {
+          "status": "success",
+          "yield_kg_ha": 10405,
+          "harvest_index": 0.692,
+          "peak_biomass_g_m2": 1503.65,
+          "veg_water_stress": 0.0,
+          "veg_n_stress": 0.0,
+          "veg_days": 118,
+          "repro_water_stress": 0.0,
+          "repro_n_stress": 0.0,
+          "repro_days": 5,
+          "crop_lifespan_days": 123,
+          "weekly_stress": {
+            "week_0": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            },
+            "week_1": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 4
+            },
+            "week_2": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_3": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_4": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_5": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_6": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_7": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_8": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_9": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_10": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_11": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_12": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_13": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_14": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_15": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 8
+            },
+            "week_16": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 7
+            },
+            "week_17": {
+              "water_stress": 0.0,
+              "n_stress": 0.0,
+              "days": 0
+            }
+          },
+          "total_drainage_mm": 342.66,
+          "total_leach_no3_nh4": 36.55,
+          "waterlogging_index": 0.0,
+          "n_oversupply_index": 1.589,
+          "soc_loss_index": 0.0
+        },
+        "reflection_trace": [
+          {
+            "iteration": 1,
+            "reward": 184992.72599999997,
+            "yield_kg_ha": 10405,
+            "aba_bounds": {
+              "reflection": "Unrestricted bounds.",
+              "strategy_name": "Unrestricted",
+              "in_season_weeks": [
+                {
+                  "week_index": 17,
+                  "urea_min": 0.0,
+                  "urea_max": 9999.0,
+                  "irrig_min": 0.0,
+                  "irrig_max": 9999.0,
+                  "reasoning": "Unrestricted",
+                  "urea_window": [
+                    1.0,
+                    9803.4
+                  ],
+                  "irrig_window": [
+                    1.0,
+                    4416.799999999999
+                  ]
+                }
+              ]
+            },
+            "chosen_doses": {
+              "urea": 0.0,
+              "irrig": 0.0
+            },
+            "vfa_critique": "Yield: 10405 kg/ha. Reward (Eq. 2, R = R_rev - C_prod - P_sust): Rs.184992.73 (Revenue Rs.217464.50, Production cost Rs.23240.12, Sustainability penalty Rs.9231.65).\nSown on: 23-Jun.\n[STRESS] Water: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days. Nitrogen: 0.0 vegetative-days + 0.0 REPRODUCTIVE-days.\nHarvest Index: 0.692 (agronomic target >= 0.45).\nEnvironmental: 343mm cumulative drainage, 36.5kg/ha NO3 leached. Suggest an extra split or foliar nitrogen application after heavy percolation events to compensate for leached NO3. Also, consider narrowing the upper irrigation bound or withholding scheduled irrigation if rainfall already exceeds 200 mm/week.\nNo improvement over the previous reflection iteration -- reconsider whether the bounds are actually binding (i.e. whether the optimizer is choosing values at the edge of the range you gave it).",
+            "aba_used_fallback": false
+          }
+        ]
+      }
+    }
+  }
+}

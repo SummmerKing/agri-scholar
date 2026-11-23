@@ -1,0 +1,26 @@
+[
+  {
+    "location": "Haveri",
+    "year": 2017,
+    "gpu_id": 2,
+    "log_path": "rerun_static_top/logs/agri_sigra_Haveri_2017_20261008_202554_Haveri_2017.log",
+    "status": "failed",
+    "season_result": null
+  },
+  {
+    "location": "Mandya",
+    "year": 2015,
+    "gpu_id": 0,
+    "log_path": "rerun_static_top/logs/agri_sigra_Mandya_2015_20261008_202554_Mandya_2015.log",
+    "status": "failed",
+    "season_result": null
+  },
+  {
+    "location": "Haveri",
+    "year": 2015,
+    "gpu_id": 1,
+    "log_path": "rerun_static_top/logs/agri_sigra_Haveri_2015_20261008_202554_Haveri_2015.log",
+    "status": "failed",
+    "season_result": null
+  }
+]

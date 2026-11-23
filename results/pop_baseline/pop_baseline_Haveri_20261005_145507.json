@@ -1,0 +1,50 @@
+[
+  {
+    "location": "Haveri",
+    "year": 2015,
+    "status": "success",
+    "yield_kg_ha": 7963.0,
+    "reward": 161180.9,
+    "reward_breakdown": {
+      "yield_kg_ha": 7963.0,
+      "R_rev": 166426.69999999998,
+      "C_F": 1956.0,
+      "C_I": 0,
+      "C_L": 1050.0,
+      "C_prod": 3006.0,
+      "n_F": 3,
+      "n_I": 0,
+      "P_season": 1676.0,
+      "P_post": 563.8,
+      "P_sust": 2239.8,
+      "reward": 161180.9,
+      "crop_failure": false
+    },
+    "diagnostics": {
+      "status": "success",
+      "yield_kg_ha": 7963,
+      "harvest_index": 0.6867,
+      "peak_biomass_g_m2": 1159.6,
+      "veg_water_stress": 0.0,
+      "veg_n_stress": 0.0,
+      "veg_days": 112,
+      "repro_water_stress": 0.0,
+      "repro_n_stress": 0.0,
+      "repro_days": 7,
+      "crop_lifespan_days": 119,
+      "total_drainage_mm": 35.32,
+      "total_leach_no3_nh4": 1.36,
+      "waterlogging_index": 0.0,
+      "n_oversupply_index": 0.838,
+      "soc_loss_index": 0.0
+    },
+    "weather_file": "data/weather_maize_pilot/Haveri_2015.met",
+    "cultivar": "MAH-14-138",
+    "recipe": {
+      "n_total_kg": 150.0,
+      "n_splits": 3,
+      "irrig_events": 0,
+      "irrig_mm_each": 0.0
+    }
+  }
+]
