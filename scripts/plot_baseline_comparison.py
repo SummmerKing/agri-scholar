@@ -12,8 +12,10 @@ from collections import defaultdict
 
 import matplotlib.pyplot as plt
 import numpy as np
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 rng = random.randint(1000, 9999)
-RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results", "mandya")
+RESULTS_DIR = os.path.join(ROOT, "results", "mandya")
 OUTPUT_PATH = os.path.join(RESULTS_DIR, f"baseline_comparison_{rng}.png")
 
 GOVT_BASELINE_DATA = {

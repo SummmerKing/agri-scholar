@@ -9,8 +9,8 @@ import datetime
 from dataclasses import dataclass, field
 from typing import Dict, Optional
 
-from apsim_controller import ApsimController
-import reward_model as rm
+from agri_scholar.simulation.apsim import ApsimController
+from agri_scholar.simulation import reward as rm
 
 log = logging.getLogger("agri_sigra")
 

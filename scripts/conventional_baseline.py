@@ -1,27 +1,29 @@
 """Conventional-practice baseline: 150 kg N/ha in 3 splits and 6 x 40 mm irrigation, applied by the
 managers already in the baseline .apsimx file. No agents and no search; the reward is computed the
-same way as in run.py for comparison.
+same way as in the main pipeline for comparison.
 """
 import os
 import json
 import shutil
 import datetime
 
-from logging_utils import get_logger, section
-from apsim_controller import ApsimController
-import reward_model as rm
+from agri_scholar.logging_utils import get_logger, section
+from agri_scholar.simulation.apsim import ApsimController
+from agri_scholar.simulation import reward as rm
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CONFIG = {
     "LOCATIONS": ["Haveri"],
     "YEARS": [2015],
 
     # baseline file with the conventional-practice managers enabled (150 kg N in 3 splits, 6 x 40 mm irrigation)
-    "APSIM_BASE_FILE": os.path.join(os.path.dirname(__file__), "apsimx", "Maize_Haveri_pop.apsimx"),
+    "APSIM_BASE_FILE": os.path.join(ROOT, "apsimx", "Maize_Haveri_pop.apsimx"),
 
-    "MET_DIR": os.path.join(os.path.dirname(__file__), "data", "weather_maize_pilot"),
-    "SCRATCH_DIR": os.path.join(os.path.dirname(__file__), "scratch_sims_baseline"),
-    "RESULTS_DIR": os.path.join(os.path.dirname(__file__), "results", "conventional_baseline"),
-    "LOG_DIR": os.path.join(os.path.dirname(__file__), "logs", "conventional_baseline"),
+    "MET_DIR": os.path.join(ROOT, "data", "weather_maize_pilot"),
+    "SCRATCH_DIR": os.path.join(ROOT, "scratch_sims_baseline"),
+    "RESULTS_DIR": os.path.join(ROOT, "results", "conventional_baseline"),
+    "LOG_DIR": os.path.join(ROOT, "logs", "conventional_baseline"),
 
     "SOIL_PROFILES": {
         "Mandya": {

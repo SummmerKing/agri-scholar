@@ -1,0 +1,18 @@
+{
+  "JOBS": [
+    [
+      "Mandya",
+      2015
+    ],
+    [
+      "Haveri",
+      2015
+    ],
+    [
+      "Haveri",
+      2017
+    ]
+  ],
+  "RESULTS_DIR": "results/main",
+  "LOG_DIR": "logs/main"
+}

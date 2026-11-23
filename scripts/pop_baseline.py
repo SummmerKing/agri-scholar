@@ -1,7 +1,7 @@
 """Government Package-of-Practices baseline: the fixed recipe in the PoP .apsimx file, run with APSIM's
 own managers over a range of years. No agents, no GPU.
 
-    python run_pop_baseline.py --location Mandya --base-file apsimx/Maize_Mandya_pop2.apsimx \
+    python -m scripts.pop_baseline --location Mandya --base-file apsimx/Maize_Mandya_pop2.apsimx \
         --years 2015 2016 2017 --weather observed
 """
 import os
@@ -14,24 +14,26 @@ import datetime
 import re
 from typing import Dict, List, Tuple
 
-from logging_utils import get_logger, section
-import reward_model as rm
-from apsim_controller import ApsimController
+from agri_scholar.logging_utils import get_logger, section
+from agri_scholar.simulation import reward as rm
+from agri_scholar.simulation.apsim import ApsimController
 import pandas as pd
-import weather_array as wa
+from agri_scholar.simulation import weather as wa
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CONFIG = {
     "LOCATION": "Haveri",
     "YEARS": [2015],
 
-    "APSIM_BASE_FILE": os.path.join(os.path.dirname(__file__), "apsimx", "Maize_Haveri_pop2.apsimx"),
-    "BASELINE_WEATHER_DIR": os.path.join(os.path.dirname(__file__), "data", "weather_baseline_pop2"),
-    "OBSERVED_WEATHER_DIR": os.path.join(os.path.dirname(__file__), "data", "weather_maize_pilot"),
-    "RESULTS_DIR": os.path.join(os.path.dirname(__file__), "results", "pop_baseline"),
-    "SCRATCH_DIR": os.path.join(os.path.dirname(__file__), "scratch_sims_pop_baseline"),
-    "LOG_DIR": os.path.join(os.path.dirname(__file__), "logs", "pop_baseline"),
+    "APSIM_BASE_FILE": os.path.join(ROOT, "apsimx", "Maize_Haveri_pop2.apsimx"),
+    "BASELINE_WEATHER_DIR": os.path.join(ROOT, "data", "weather_baseline_pop2"),
+    "OBSERVED_WEATHER_DIR": os.path.join(ROOT, "data", "weather_maize_pilot"),
+    "RESULTS_DIR": os.path.join(ROOT, "results", "pop_baseline"),
+    "SCRATCH_DIR": os.path.join(ROOT, "scratch_sims_pop_baseline"),
+    "LOG_DIR": os.path.join(ROOT, "logs", "pop_baseline"),
 
-    # soil profiles (same as run.py)
+    # soil profiles (same as agri_scholar/config.py)
     "SOIL_PROFILES": {
         "Mandya": {
                     "order": "Alfisol", "type": "Sandy Loam", "lat": 12.52, "lon": 76.89,
@@ -71,7 +73,7 @@ CONFIG = {
         },
     },
 
-    # prices and shadow costs (same as run.py)
+    # prices and shadow costs (same as agri_scholar/config.py)
     "GRAIN_PRICE_PER_KG": 20.90,
     "FERTILIZER_PRICE_PER_KG": {"Urea": 13.04, "DAP": 27.00, "Mulch": 2.00},
     "WATER_PRICE_PER_MM": 2.50,
@@ -431,8 +433,8 @@ def main():
                 location = cfg["LOCATION"]
     else:
         location = args.location or cfg["LOCATION"]
-        pop2_candidate = os.path.join(os.path.dirname(__file__), "apsimx", f"Maize_{location}_pop2.apsimx")
-        pop_candidate = os.path.join(os.path.dirname(__file__), "apsimx", f"Maize_{location}_pop.apsimx")
+        pop2_candidate = os.path.join(ROOT, "apsimx", f"Maize_{location}_pop2.apsimx")
+        pop_candidate = os.path.join(ROOT, "apsimx", f"Maize_{location}_pop.apsimx")
         if os.path.exists(pop2_candidate):
             cfg["APSIM_BASE_FILE"] = pop2_candidate
         elif os.path.exists(pop_candidate):
@@ -452,7 +454,7 @@ def main():
     os.makedirs(cfg["LOG_DIR"], exist_ok=True)
 
     run_tag = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    overall_logger = get_logger(f"run_pop_baseline_{location}_{run_tag}",
+    overall_logger = get_logger(f"pop_baseline_{location}_{run_tag}",
                                 run_tag=f"{run_tag}_{location}", log_dir=cfg["LOG_DIR"])
 
     section(overall_logger, f"RUNNING POP BASELINE: {location} ({len(years)} seasons, weather={args.weather})")

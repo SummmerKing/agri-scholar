@@ -15,11 +15,11 @@ import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 
-import weather_array as wa
+from agri_scholar.simulation import weather as wa
 
 log = logging.getLogger("agri_sigra")
 
-# location -> region tag (see build_rag.py)
+# location -> region tag (see scripts/build_rag.py)
 LOCATION_TO_REGION = {
     "mandya": "karnataka", "dharwad": "karnataka",
     "davanagere": "karnataka", "haveri": "karnataka",

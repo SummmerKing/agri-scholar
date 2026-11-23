@@ -1,0 +1,22 @@
+{
+  "LOCATIONS": [
+    "Mandya"
+  ],
+  "YEARS": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "BOUNDS": "fixed",
+  "INSTANCES_PER_GPU": 3,
+  "RESULTS_DIR": "results/ablation_fixed_bounds",
+  "LOG_DIR": "logs/ablation_fixed_bounds"
+}

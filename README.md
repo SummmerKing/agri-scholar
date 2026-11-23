@@ -1,118 +1,116 @@
 # Agri-SCHOLAR
 
-Multi-agent, LLM-guided crop advisories for maize in Karnataka, India, grounded in APSIM NextGen crop simulations. Built at the Game Theory Lab, IISc.
+[![tests](https://github.com/SummmerKing/agri-scholar/actions/workflows/tests.yml/badge.svg)](https://github.com/SummmerKing/agri-scholar/actions/workflows/tests.yml)
 
-Paper: [arXiv:2610.31003](https://arxiv.org/abs/2610.31003) (PDF also in [`paper/`](paper/agri_scholar.pdf)).
+**Simulation-grounded, in-season rolling advisories for agricultural crops using LLM-bounded optimization.**
 
-Inside the code the system still uses its working name, Agri-SIGRA (for example in result file names). Both names refer to the same pipeline.
+[Paper (arXiv:2610.31003)](https://arxiv.org/abs/2610.31003) · [PDF](paper/agri_scholar.pdf) · Game Theory Lab, IISc
 
-## Overview
+Agri-SCHOLAR issues a personalized crop advisory every week of the season. LLM agents propose agronomically sound bounds on the actions (urea and irrigation), an optimizer searches inside those bounds, and every candidate is checked in the APSIM NextGen crop simulator before it is issued. The agents only ever see weather that would be available on the decision day: observations to date, a degraded 7-day forecast, and an analog tail from the closest historical years.
 
-Five agents run on a rolling weekly cycle over one growing season:
+![Agri-SCHOLAR architecture](docs/architecture.png)
 
-- **Preseason Agent (PSA)** sets land preparation (tillage, mulch, basal DAP) and the season structure: how many urea splits and irrigation events are allowed, minimum doses and season totals.
-- **Context Retrieval Agent (CRA)** builds a weather narrative and retrieves Package-of-Practices (PoP) guidance with hybrid BM25 + dense retrieval.
-- **Advisory Bounding Agent (ABA)** uses an LLM (Gemma) to propose bounds for this week's urea and irrigation.
-- **Optimization Agent (OA)** searches inside those bounds with Optuna, using a risk-adjusted reward.
-- **Verification and Feedback Agent (VFA)** simulates each candidate in APSIM, scores it and writes a critique for the ABA.
+## Results
 
-```
-pre-season (once)
-    sowing-date search over the window, scored by APSIM
-    PSA <-> OA/VFA: land prep and season caps
-for each week:
-    CRA: weather array + context bundle
-    repeat N_REFLECTION_ITERATIONS times:
-        ABA proposes bounds
-        OA searches inside them; each Optuna trial -> VFA -> APSIM -> reward
-        VFA critique goes back to the ABA
-    lock the best action that satisfies the season caps
-```
+Maize, 11 seasons (2015-2025) in an irrigated and a rainfed region of Karnataka, against the regional Package of Practices (PoP) run with perfect weather foresight:
 
-Weather for each week is assembled as real weather up to the decision day, a degraded 7-day forecast, and an analog tail from the closest historical years, so the agents never see the realized future.
+| | Irrigated | Rainfed |
+| --- | --- | --- |
+| Mean yield gain over PoP | +15.2% | +22.4% |
+| Mean net profit gain over PoP | +17.2% | +22.8% |
+| Seasons where Agri-SCHOLAR beats PoP | 11 / 11 | 11 / 11 |
 
-## Requirements
+![Yield per season, irrigated region](docs/yield_irrigated.png)
 
-| | |
+## How it works
+
+| Agent | Role |
 | --- | --- |
-| Python | 3.10+ on Linux |
-| GPU | one per parallel season; Gemma-4-E4B in bf16 needs about 16 GB |
-| [APSIM NextGen](https://www.apsim.info/download-apsim/) | the `Models` executable on `PATH`, or `APSIM_MODELS_EXE=/path/to/Models` |
-| Hugging Face access to `google/gemma-4-E4B-it` | gated model: accept the licence, then `huggingface-cli login` |
-| Disk | about 20 GB, mostly the Gemma weights |
+| Context Retrieval Agent | weather narrative plus hybrid BM25 + dense retrieval over the Package-of-Practices corpus |
+| Preseason Agent | land preparation and season structure: split and event caps, minimum doses, season totals |
+| Advisory Bounding Agent | LLM (Gemma) proposes this week's urea and irrigation bounds |
+| Optimization Agent | Optuna search inside the bounds with a risk-adjusted reward |
+| Verification and Feedback Agent | runs each candidate in APSIM, scores it, and writes a critique back to the ABA |
+
+```
+pre-season:  sowing date -> PSA <-> OA/VFA reflection for land prep and season caps
+every week:  CRA context -> [ABA bounds -> OA search -> VFA in APSIM -> critique] x N -> lock best action
+end:         replay the issued plan in APSIM under the observed weather
+```
+
+The reward (Eqs. 2-14 of the paper) is revenue minus production cost minus sustainability penalties for waterlogging, nitrogen oversupply, deep drainage, nitrate leaching and soil carbon loss.
+
+## Repository layout
+
+```
+agri_scholar/
+  config.py              default settings; experiment files override them
+  pipeline.py            season loop and parallel runner
+  agents/                preseason, context_retrieval, advisory_bounding, optimization,
+                         verification_feedback, fixed_bounds (no-LLM ablations)
+  simulation/            apsim (APSIM file editing and execution), engine (actions, caps),
+                         weather (weather arrays, forecast degradation), reward
+  llm.py                 shared, seeded Gemma instance
+configs/                 one JSON file per experiment in the paper
+scripts/                 PoP and conventional baselines, RAG corpus builder, tables, plots
+tests/                   checks that run without a GPU or APSIM
+apsimx/                  calibrated and PoP APSIM models
+data/weather_maize_pilot daily weather (.met) per location and year
+results/                 outputs of the runs reported in the paper
+run.py                   entry point
+```
 
 ## Setup
+
+| Requirement | Notes |
+| --- | --- |
+| Python 3.10+, Linux | |
+| NVIDIA GPU | Gemma-4-E4B in bf16 needs about 16 GB per parallel season |
+| [APSIM NextGen](https://www.apsim.info/download-apsim/) | `Models` on `PATH`, or `APSIM_MODELS_EXE=/path/to/Models` |
+| Hugging Face access to `google/gemma-4-E4B-it` | gated model: accept the licence, then `huggingface-cli login` |
 
 ```bash
 git clone https://github.com/SummmerKing/agri-scholar.git
 cd agri-scholar
-conda create -n agri-scholar python=3.11 -y
-conda activate agri-scholar
 pip install -r requirements.txt
+python -m pytest tests -q
 ```
-
-Run every script from the repository root.
 
 ## Running
 
-1. In `run.py`, set `CONFIG["GPU_IDS"]` to GPUs that exist on your machine (for example `[0]`).
-2. Edit `jobs_spec` in `main()` to choose the seasons, for example `[("Mandya", 2015), ("Haveri", 2017)]`. Weather is available for Mandya and Haveri in `data/weather_maize_pilot/`.
-3. Run it. A season takes several hours, so use `tmux` or `nohup`:
-
 ```bash
-python run.py
+python run.py --config configs/mandya.json --gpus 0 1
+python run.py --config configs/haveri.json --years 2023 2024
 ```
 
-Each (location, year) runs in its own process. Results are written to `results/main/`: one JSON per season with the locked actions, weekly advisories, VFA critiques, final yield and reward breakdown, plus a combined JSON. Logs go to `logs/`.
-
-The RAG corpus (`rag_corpus.json`) and its embedding cache are included. To rebuild them, put the PoP PDFs in `Package_Of_Practices/`, run `python build_rag.py` and delete `rag_corpus_embeddings.npy`.
-
-All settings live in the `CONFIG` dict at the top of each run script: season length, cultivar and seed, LLM and retrieval settings, search budgets, sowing window, prices (Rs.) and the shadow costs used in the sustainability penalty.
-
-## Experiments
-
-| Experiment | Script | Results |
+| Experiment | Config | Results |
 | --- | --- | --- |
-| Main pipeline | `run.py` | `results/main/` |
-| Mandya, 2015-2025 | `run_mandya.py` | `results/mandya/` |
-| Haveri, 2015-2025 | `run_haveri.py` | `results/haveri/` |
-| Haveri reruns | `run_haveri_rerun.py`, `run_haveri_rerun_2025.py` | `results/haveri_rerun/` |
-| Ablation: no LLM, fixed wide bounds | `run_no_aba.py` | `results/ablation_fixed_bounds/` |
-| Ablation: no LLM, PoP-derived bounds | `run_pop_bounds.py` | `results/ablation_pop_bounds/` |
-| Government PoP baseline | `run_pop_baseline.py` | `results/pop_baseline/` |
+| Main pipeline | `configs/main.json` | `results/main/` |
+| Irrigated region (Mandya), 2015-2025 | `configs/mandya.json` | `results/mandya/` |
+| Rainfed region (Haveri), 2015-2025 | `configs/haveri.json` | `results/haveri/` |
+| Haveri reruns, sowing after monsoon onset | `configs/haveri_rerun.json` | `results/haveri_rerun/` |
+| Ablation: no LLM, fixed wide bounds | `configs/ablation_fixed_bounds.json` | `results/ablation_fixed_bounds/` |
+| Ablation: no LLM, PoP-derived bounds | `configs/ablation_pop_bounds.json` | `results/ablation_pop_bounds/` |
 
-The PoP baseline needs no GPU:
+Each season runs in its own process and writes one JSON with the locked actions, weekly advisories, VFA critiques, final yield and reward breakdown. A season takes several hours, so use `tmux` or `nohup`. All settings and their defaults are in `agri_scholar/config.py`; the two that switch between experiments are `BOUNDS` (`llm`, `fixed`, `pop`) and `SOWING` (`pop_date`, `onset`, `window`).
+
+Baselines and analysis (no GPU needed):
 
 ```bash
-python run_pop_baseline.py --location Mandya --base-file apsimx/Maize_Mandya_pop2.apsimx \
-    --years 2015 2016 2017 --weather observed
+python -m scripts.pop_baseline --location Mandya --base-file apsimx/Maize_Mandya_pop2.apsimx --years 2015-2025 --weather observed
+python -m scripts.make_ablation_tables
+python -m scripts.plot_baseline_comparison
 ```
 
-`make_ablation_tables.py` prints the LaTeX tables for the ABA ablation, and `plot_baseline_comparison.py` plots Agri-SCHOLAR yields against government baseline yields.
+The RAG corpus (`rag_corpus.json`) and its embedding cache are included. To rebuild them, put the PoP PDFs in `Package_Of_Practices/`, run `python -m scripts.build_rag` and delete `rag_corpus_embeddings.npy`.
 
-## Layout
+## Citation
 
-| Path | Contents |
-| --- | --- |
-| `run.py` | pipeline and experiment settings |
-| `preseason_agent.py`, `context_retrieval_agent.py`, `advisory_bounding_agent.py`, `optimization_agent.py`, `verification_feedback_agent.py` | the five agents |
-| `reward_model.py` | reward (Eqs. 2-14): revenue, production cost, sustainability penalties |
-| `simulation_engine.py` | action -> APSIM calls -> outcome, and the season caps |
-| `apsim_controller.py` | APSIM NextGen file editing and execution |
-| `weather_array.py` | weather array construction and forecast degradation |
-| `llm_backend.py` | shared, seeded Gemma instance |
-| `build_rag.py` | PoP PDFs -> `rag_corpus.json` |
-| `apsimx/` | calibrated and PoP APSIM models for Mandya and Haveri |
-| `data/weather_maize_pilot/` | daily weather (`.met`) per location and year |
-| `results/` | outputs of the runs reported in the paper |
-| `paper/` | paper PDF |
-
-## Troubleshooting
-
-| Symptom | Fix |
-| --- | --- |
-| `CUDA error: invalid device ordinal` | `GPU_IDS` lists GPUs that don't exist on this machine |
-| `401` or `gated repo` when loading Gemma | accept the model licence on Hugging Face and log in |
-| every simulation fails or yield is 0 | APSIM is not found: check `which Models` or set `APSIM_MODELS_EXE` |
-| out of RAM or CPU | lower `OPTUNA_N_JOBS`, `SOW_SEARCH_N_JOBS` or the number of parallel GPUs |
-| `scratch_sims/` grows large | safe to delete between runs |
+```bibtex
+@article{charan2026agrischolar,
+  title   = {Agri-SCHOLAR: Simulation-Grounded In-Season Rolling Advisories for Agricultural Crops Using LLM-Bounded Optimization},
+  author  = {Charan, Geetha and Balasubramaniam, Vedant and Patil, Manojkumar and Priyanka, V. and Suresh, Rohit P. and Sathvik, Kodur Sai Vinay and Azam, Mohammad Sufyan and Narahari, Y.},
+  journal = {arXiv preprint arXiv:2610.31003},
+  year    = {2026}
+}
+```

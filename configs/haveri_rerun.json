@@ -1,0 +1,15 @@
+{
+  "LOCATIONS": [
+    "Haveri"
+  ],
+  "YEARS": [
+    2017,
+    2019,
+    2021,
+    2022,
+    2025
+  ],
+  "SOWING": "onset",
+  "RESULTS_DIR": "results/haveri_rerun",
+  "LOG_DIR": "logs/haveri_rerun"
+}

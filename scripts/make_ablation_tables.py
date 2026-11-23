@@ -2,7 +2,9 @@
 import json
 import os
 
-RESULTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results", "ablation_fixed_bounds")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+RESULTS = os.path.join(ROOT, "results", "ablation_fixed_bounds")
 
 scholar_data = {
     2015: {"yield": 9649, "reward": 9470.272, "drainage": 45, "leaching": 3.1},

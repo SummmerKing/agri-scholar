@@ -7,8 +7,8 @@ Preseason Agent and are passed in as fixed constraints.
 import json
 import logging
 
-from llm_backend import LocalLLM
-from simulation_engine import ActionCaps
+from agri_scholar.llm import LocalLLM
+from agri_scholar.simulation.engine import ActionCaps
 
 log = logging.getLogger("agri_sigra")
 

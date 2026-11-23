@@ -3,7 +3,7 @@
 Pages are split into prose and table chunks (table rows keep their headers), tagged with the
 locations and region they mention, then deduplicated and filtered. Scanned pages fall back to OCR.
 
-    python build_rag.py
+    python -m scripts.build_rag
 """
 import os
 import re
@@ -14,6 +14,8 @@ from collections import Counter
 
 import numpy as np
 import pdfplumber
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 log = logging.getLogger("build_rag")
@@ -28,14 +30,14 @@ def _clean_text(text: str) -> str:
     text = text.replace("­", "")
     return _WS_RE.sub(" ", text).strip()
 
-DEFAULT_PDF_DIR = os.path.join(os.path.dirname(__file__), "Package_Of_Practices")
+DEFAULT_PDF_DIR = os.path.join(ROOT, "Package_Of_Practices")
 DEFAULT_OUTPUT = "rag_corpus.json"
 DEFAULT_CHUNK_SIZE = 250   # words, for prose chunks
 DEFAULT_OVERLAP = 40       # words, for prose chunks
 DEFAULT_TABLE_ROWS_PER_CHUNK = 6  # data rows per table chunk (header repeated in each)
 # small batches keep a table chunk from mixing rows from different districts
 
-# locations used by run.py, with spellings found in the PDFs (e.g. Dharwar)
+# locations used in the experiments, with spellings found in the PDFs (e.g. Dharwar)
 LOCATION_ALIASES = {
     "Mandya": ["Mandya"],
     "Dharwad": ["Dharwad", "Dharwar"],

@@ -93,7 +93,7 @@ class ApsimController:
         self._save()
 
     def set_location_soil_profile(self, location: str, soil_profiles: dict):
-        """`soil_profiles` maps location name -> physics dict (see run.py config)."""
+        """`soil_profiles` maps location name -> physics dict (see agri_scholar/config.py)."""
         p = soil_profiles.get(location, next(iter(soil_profiles.values())))
         found = 0
 

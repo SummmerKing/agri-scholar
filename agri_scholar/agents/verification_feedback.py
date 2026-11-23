@@ -6,7 +6,7 @@ a short natural-language critique that the ABA uses to tighten or relax its boun
 import logging
 from typing import List, Optional
 
-from simulation_engine import SimulationEngine, SimulationResult
+from agri_scholar.simulation.engine import SimulationEngine, SimulationResult
 
 log = logging.getLogger("agri_sigra")
 

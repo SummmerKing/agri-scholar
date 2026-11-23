@@ -1,4 +1,10 @@
-"""Agri-SCHOLAR on all Mandya seasons (2015-2025). Same pipeline as run.py."""
+"""Agri-SCHOLAR season loop.
+
+Pre-season: sowing date, then PSA <-> OA/VFA reflection for land prep and season caps.
+Every week: the CRA builds the weather array and context, the ABA proposes bounds, the OA searches
+inside them and the VFA scores candidates in APSIM. The best cap-compliant action is locked and the
+next week starts.
+"""
 import os
 import gc
 import json
@@ -16,133 +22,19 @@ try:
 except ImportError:
     _HAS_TORCH = False
 
-from logging_utils import get_logger, section
-import weather_array as wa
-import reward_model as rm
-from context_retrieval_agent import ContextRetrievalAgent
-from llm_backend import LocalLLM
-from preseason_agent import PreseasonAgent
-from advisory_bounding_agent import AdvisoryBoundingAgent
-from optimization_agent import OptimizationAgent
-from verification_feedback_agent import VerificationFeedbackAgent
-from simulation_engine import SimulationEngine, ActionCaps
-from seeding import derive_seed
-
-CONFIG = {
-    "LOCATIONS": ["Mandya"],
-    "YEARS": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-    "TOTAL_WEEKS": 18,
-    "CULTIVAR": "MAH-14-138",
-    "POPULATION_PLANTS_M2": 8.5,
-    "SEED": 42,
-
-    "GPU_IDS": [0, 1, 2, 3, 4, 5, 6, 7],
-    "INSTANCES_PER_GPU": 1,
-
-    "APSIM_BASE_FILE": os.path.join(os.path.dirname(__file__), "apsimx", "Maize_Mandya_Caliberated.apsimx"),
-    "MET_DIR": os.path.join(os.path.dirname(__file__), "data", "weather_maize_pilot"),
-    "RAG_CORPUS_PATH": os.path.join(os.path.dirname(__file__), "rag_corpus.json"),
-    "SCRATCH_DIR": os.path.join(os.path.dirname(__file__), "scratch_sims"),
-    "RESULTS_DIR": os.path.join(os.path.dirname(__file__), "results", "mandya"),
-    "LOG_DIR": os.path.join(os.path.dirname(__file__), "logs", "mandya"),
-
-    "ABA_MODEL_ID": "google/gemma-4-E4B-it",
-    "ABA_GPU_ID": 0,
-    "ABA_MAX_NEW_TOKENS": 1500,
-    "ABA_TEMPERATURE": 0.5,
-
-    "RAG_EMBED_MODEL": "sentence-transformers/all-MiniLM-L6-v2",
-    "RAG_ALPHA": 0.5,
-    "RAG_TOP_K": 3,
-    "RAG_LOCATION_BOOST": 0.25,
-    "RAG_REGION_BOOST": 0.10,
-    "RAG_MAX_CHUNKS_PER_FILE": 2,
-
-    "N_PRESEASON_REFLECTION_ITERATIONS": 2,
-    "N_TRIALS_PRESEASON": 100,   # mulch / DAP / tillage search per PSA iteration (sowing date is locked first)
-
-    "SOW_WINDOW_START": "06-01",          # MM-DD, first allowed sowing day
-    "SOW_WINDOW_END": "07-15",            # MM-DD, last allowed sowing day
-    "SOW_SEARCH_STRIDE_DAYS": 1,
-    "SOW_SEARCH_N_ANALOGS": 3,            # weather ensemble size (top-K analog years)
-    "SOW_SEARCH_LAMBDA_RISK": 0.5,
-    "SOW_SEARCH_SMOOTH_HALFWIDTH": 1,     # +/-1 candidate neighbours -> 3-point smoothing of the score curve
-    "SOW_SEARCH_BASAL_DAP_KG": 60.0,      # neutral management used only while ranking sowing dates
-    "SOW_SEARCH_TILLAGE_FRACTION": 0.5,
-    "SOW_SEARCH_N_JOBS": 4,               # parallel APSIM runs during the sowing search
-
-    "N_REFLECTION_ITERATIONS": 3,
-
-    "N_TRIALS_LATER_WEEKS": 25,   # every in-season week (week 0 included) searches urea/irrigation only
-    "OPTUNA_N_JOBS": 1,
-    # receding horizon: plan urea for weeks w..T-1, commit week w
-    "N_TRIALS_PER_HORIZON_WEEK": 4,
-    "HORIZON_WEEKS": None,
-    "FUTURE_UREA_STEP_KG": 5.0,     # coarse dose step for future (uncommitted) weeks
-    "MAX_SINGLE_UREA_KG": None,     # per-split ceiling for future weeks; None = derived from season cap / splits
-
-    "GRAIN_PRICE_PER_KG": 20.90,
-    "FERTILIZER_PRICE_PER_KG": {
-        "Urea": 13.04,      # pure elemental-N-equivalent price for UreaN applications
-        "DAP": 27.00,
-        "Mulch": 2.00,      # nominal per-kg cost of sourcing/spreading residue mulch
-    },
-    "WATER_PRICE_PER_MM": 2.50,
-    "LABOR_PRICE_PER_OPERATION": 350.0,
-
-    "SHADOW_COST_WATERLOGGING": 5000.0,
-    "SHADOW_COST_N_OVERSUPPLY": 2000.0,
-    "SHADOW_COST_DEEP_DRAINAGE": 15.0,
-    "SHADOW_COST_N_LEACHING": 25.0,
-    "SHADOW_COST_SOC_LOSS": 150.0,
-
-    "CROP_FAILURE_PENALTY": 50000.0,
-
-    "ANALOG_FEATURES_WEEK0": ["ONI", "Rain_Jan", "Rain_Feb", "Rain_Mar", "Rain_Apr", "Rain_May", "Tmax_Jan_May"],
-    "ANALOG_WEIGHTS_WEEK0": [0.2, 0.1, 0.1, 0.1, 0.2, 0.2, 0.1],
-    "ANALOG_FEATURES_LATER": ["ONI", "CumRain", "RainyDays", "MaxDrySpell", "Tmax_Mean"],
-    "ANALOG_WEIGHTS_LATER": [0.2, 0.3, 0.2, 0.2, 0.1],
-
-    # calibrated .apsimx per location
-    "SOIL_PROFILES": {
-        "Mandya": {
-            "order": "Alfisol", "type": "Sandy Loam", "lat": 12.52, "lon": 76.89,
-            "bd": [1.45, 1.48, 1.50, 1.50, 1.50, 1.50, 1.50],
-            "airdry": [0.05, 0.08, 0.11, 0.12, 0.12, 0.12, 0.12],
-            "ll15": [0.10, 0.10, 0.11, 0.12, 0.12, 0.12, 0.12],
-            "dul": [0.22, 0.22, 0.24, 0.25, 0.25, 0.25, 0.25],
-            "sat": [0.40, 0.40, 0.40, 0.40, 0.40, 0.40, 0.40],
-            "ks": [100.0] * 7, "carbon": [0.50, 0.30, 0.20, 0.10, 0.05, 0.05, 0.05],
-        },
-        "Dharwad": {
-            "order": "Vertisol", "type": "Clay", "lat": 15.4589, "lon": 75.0078,
-            "bd": [1.15, 1.15, 1.15, 1.15, 1.20, 1.20, 1.20],
-            "airdry": [0.15, 0.20, 0.25, 0.28, 0.28, 0.28, 0.28],
-            "ll15": [0.28, 0.28, 0.28, 0.28, 0.28, 0.28, 0.28],
-            "dul": [0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45],
-            "sat": [0.54, 0.54, 0.54, 0.54, 0.53, 0.53, 0.53],
-            "ks": [10.0] * 7, "carbon": [0.60, 0.40, 0.30, 0.20, 0.10, 0.10, 0.10],
-        },
-        "Davanagere": {
-            "order": "Alfisol", "type": "Red Brown", "lat": 14.4644, "lon": 75.9218,
-            "bd": [1.40, 1.40, 1.45, 1.45, 1.45, 1.45, 1.45],
-            "airdry": [0.08, 0.10, 0.12, 0.14, 0.14, 0.14, 0.14],
-            "ll15": [0.14, 0.14, 0.15, 0.15, 0.15, 0.15, 0.15],
-            "dul": [0.28, 0.28, 0.30, 0.30, 0.30, 0.30, 0.30],
-            "sat": [0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42],
-            "ks": [70.0] * 7, "carbon": [0.45, 0.25, 0.15, 0.10, 0.05, 0.05, 0.05],
-        },
-        "Haveri": {
-            "order": "Inceptisol", "type": "Transitional", "lat": 14.7937, "lon": 75.3983,
-            "bd": [1.30, 1.30, 1.35, 1.35, 1.35, 1.35, 1.35],
-            "airdry": [0.10, 0.15, 0.20, 0.20, 0.20, 0.20, 0.20],
-            "ll15": [0.20, 0.20, 0.22, 0.22, 0.22, 0.22, 0.22],
-            "dul": [0.38, 0.38, 0.40, 0.40, 0.40, 0.40, 0.40],
-            "sat": [0.48, 0.48, 0.47, 0.47, 0.47, 0.47, 0.47],
-            "ks": [50.0] * 7, "carbon": [0.55, 0.35, 0.25, 0.15, 0.05, 0.05, 0.05],
-        },
-    },
-}
+from agri_scholar.config import POP_SOWING_DATES
+from agri_scholar.logging_utils import get_logger, section
+from agri_scholar.simulation import weather as wa
+from agri_scholar.simulation import reward as rm
+from agri_scholar.simulation.engine import SimulationEngine, ActionCaps
+from agri_scholar.agents.context_retrieval import ContextRetrievalAgent
+from agri_scholar.agents.preseason import PreseasonAgent, make_fallback
+from agri_scholar.agents.advisory_bounding import AdvisoryBoundingAgent
+from agri_scholar.agents.optimization import OptimizationAgent
+from agri_scholar.agents.verification_feedback import VerificationFeedbackAgent
+from agri_scholar.agents.fixed_bounds import FixedBounds, PopBounds
+from agri_scholar.llm import LocalLLM
+from agri_scholar.seeding import derive_seed
 
 
 def sow_window_doys(year: int, start_md: str, end_md: str):
@@ -151,6 +43,32 @@ def sow_window_doys(year: int, start_md: str, end_md: str):
         m, d = (int(x) for x in md.split("-"))
         return datetime.date(year, m, d).timetuple().tm_yday
     return doy(start_md), doy(end_md)
+
+
+def sowing_window(cfg: dict, location: str, year: int, weather: pd.DataFrame):
+    """Allowed sowing DOY range for a season.
+
+    pop_date: the PoP baseline sowing date (a single day), window: SOW_WINDOW_START..END,
+    onset: monsoon onset (first day from 1 Jun with >= 25 mm over 3 days and >= 2.5 mm that day,
+    default DOY 166) plus 15 days.
+    """
+    mode = cfg["SOWING"]
+    if mode == "pop_date" and (location, year) in POP_SOWING_DATES:
+        doy = sow_window_doys(year, POP_SOWING_DATES[(location, year)], "01-01")[0]
+        return doy, doy
+    if mode == "onset":
+        onset_doy, rain_window = 166, []
+        for _, row in weather.sort_values("day").iterrows():
+            day, rain = int(row["day"]), float(row["rain"])
+            if day >= 152:
+                rain_window.append((day, rain))
+                if len(rain_window) > 3:
+                    rain_window.pop(0)
+                if len(rain_window) == 3 and sum(r for _, r in rain_window) >= 25.0 and rain >= 2.5:
+                    onset_doy = day
+                    break
+        return onset_doy, onset_doy + 15
+    return sow_window_doys(year, cfg["SOW_WINDOW_START"], cfg["SOW_WINDOW_END"])
 
 
 def run_season(cfg: dict, location: str, year: int, logger) -> dict:
@@ -167,30 +85,7 @@ def run_season(cfg: dict, location: str, year: int, logger) -> dict:
         """Rainfall narrative using only weather observed through `day` (no look-ahead)."""
         return wa.summarize_kharif_season(met_path, year, int(day))["narrative"]
 
-    win_start, win_end = sow_window_doys(year, cfg["SOW_WINDOW_START"], cfg["SOW_WINDOW_END"])
-
-        # use the PoP baseline sowing date
-    POP_DATES = {
-        ('Mandya', 2015): '19-Jun', ('Mandya', 2016): '03-Jun', ('Mandya', 2017): '11-Jun',
-        ('Mandya', 2018): '03-Jun', ('Mandya', 2019): '09-Jun', ('Mandya', 2020): '30-Jun',
-        ('Mandya', 2021): '04-Jun', ('Mandya', 2022): '19-Jun', ('Mandya', 2023): '04-Jul',
-        ('Mandya', 2024): '07-Jun', ('Mandya', 2025): '12-Jun',
-        ('Haveri', 2015): '19-Jun', ('Haveri', 2016): '04-Jun', ('Haveri', 2017): '11-Jun',
-        ('Haveri', 2018): '03-Jun', ('Haveri', 2019): '12-Jun', ('Haveri', 2020): '04-Jul',
-        ('Haveri', 2021): '04-Jun', ('Haveri', 2022): '22-Jun', ('Haveri', 2023): '04-Jul',
-        ('Haveri', 2024): '05-Jun', ('Haveri', 2025): '11-Jun'
-    }
-    pop_str = POP_DATES.get((location, year))
-    if pop_str:
-        import datetime
-        d, m = pop_str.split('-')
-        month_map = {'Jun': 6, 'Jul': 7}
-        pop_doy = datetime.date(year, month_map[m], int(d)).timetuple().tm_yday
-        win_start = pop_doy
-        win_end = pop_doy
-    else:
-        win_start, win_end = sow_window_doys(year, cfg["SOW_WINDOW_START"], cfg["SOW_WINDOW_END"])
-
+    win_start, win_end = sowing_window(cfg, location, year, all_weather[year])
     logger.info(f"Sowing window DOY {win_start}..{win_end}")
 
     prices = rm.Prices(
@@ -210,7 +105,7 @@ def run_season(cfg: dict, location: str, year: int, logger) -> dict:
                                   min_urea_kg=0.0, min_irrigation_mm=0.0)
 
     engine = SimulationEngine(
-        location=location, year=year, apsim_base_file=cfg["APSIM_BASE_FILE"], default_met_file=met_path,
+        location=location, year=year, apsim_base_file=cfg["APSIM_BASE_FILES"][location], default_met_file=met_path,
         sow_window_start_doy=win_start, sow_window_end_doy=win_end,
         total_weeks=cfg["TOTAL_WEEKS"], prices=prices, shadow_costs=shadow_costs,
         soil_profiles=cfg["SOIL_PROFILES"], action_caps=placeholder_caps, scratch_dir=cfg["SCRATCH_DIR"],
@@ -221,11 +116,19 @@ def run_season(cfg: dict, location: str, year: int, logger) -> dict:
                                  location_boost=cfg["RAG_LOCATION_BOOST"],
                                  region_boost=cfg["RAG_REGION_BOOST"],
                                  max_chunks_per_file=cfg["RAG_MAX_CHUNKS_PER_FILE"])
-    # one LLM shared by the PSA and the ABA
-    llm = LocalLLM(cfg["ABA_MODEL_ID"], cfg["ABA_GPU_ID"], cfg["ABA_MAX_NEW_TOKENS"], cfg["ABA_TEMPERATURE"],
-                   seed=season_seed)
-    psa = PreseasonAgent(llm)
-    aba = AdvisoryBoundingAgent(llm)
+    llm = None
+    if cfg["BOUNDS"] == "llm":
+        # one LLM shared by the PSA and the ABA
+        llm = LocalLLM(cfg["ABA_MODEL_ID"], cfg["ABA_GPU_ID"], cfg["ABA_MAX_NEW_TOKENS"], cfg["ABA_TEMPERATURE"],
+                       seed=season_seed)
+        psa = PreseasonAgent(llm)
+        aba = AdvisoryBoundingAgent(llm)
+    elif cfg["BOUNDS"] == "fixed":
+        psa = aba = FixedBounds(cfg["TOTAL_WEEKS"])
+    elif cfg["BOUNDS"] == "pop":
+        psa = aba = PopBounds(cfg["TOTAL_WEEKS"])
+    else:
+        raise ValueError(f"unknown BOUNDS mode: {cfg['BOUNDS']}")
     oa = OptimizationAgent(
         vfa=vfa, total_weeks=cfg["TOTAL_WEEKS"], n_trials_preseason=cfg["N_TRIALS_PRESEASON"],
         n_trials_later=cfg["N_TRIALS_LATER_WEEKS"], n_jobs=cfg["OPTUNA_N_JOBS"], seed=season_seed,
@@ -345,7 +248,6 @@ def run_season(cfg: dict, location: str, year: int, logger) -> dict:
         if best_pre["result"] is None:
             logger.error("No pre-season candidate from any iteration -- using PSA fallback structure and "
                          "neutral land prep (no mulch, no basal DAP).")
-            from preseason_agent import make_fallback
             best_pre["bounds"] = make_fallback()
             best_pre["action"] = {"sow_doy": win_start, "mulch_mass": 0.0, "basal_dap_kg": 0.0, "tillage_fraction": 0.5}
 
@@ -457,8 +359,8 @@ def run_season(cfg: dict, location: str, year: int, logger) -> dict:
                         extra_splits = int(delta_leaching // 15.0)
                         caps.max_urea_splits += extra_splits
                         caps.season_max_urea_kg += (20.0 * extra_splits)
-                        logger.warning(f"URGENT TOP-UP: {delta_leaching:.1f}kg NO3 leached in week {week_idx}. "
-                                       f"Adding {extra_splits} extra splits and {20.0 * extra_splits}kg Urea to budget!")
+                        logger.warning(f"Leaching top-up: {delta_leaching:.1f} kg NO3 leached in week {week_idx}, "
+                                       f"adding {extra_splits} split(s) and {20.0 * extra_splits} kg urea to the budget")
                 prev_cumulative_leaching = current_leaching
             else:
                 last_week_drainage = 0.0
@@ -537,6 +439,7 @@ def _run_one_job(job: dict) -> dict:
     year = job["year"]
     gpu_id = job["gpu_id"]
     run_tag = job["run_tag"]
+    sem = job.get("semaphore")
 
     cfg = copy.deepcopy(cfg)
     cfg["LOCATION"] = location
@@ -555,13 +458,18 @@ def _run_one_job(job: dict) -> dict:
 
     logger.info(f"[GPU {gpu_id}] Starting season {location} {year}")
     logger.info(f"CONFIG:\n{json.dumps({k: v for k, v in cfg.items() if k != 'SOIL_PROFILES'}, indent=2, default=str)}")
+
     try:
+        if sem:
+            sem.acquire()
         season_result = run_season(cfg, location, year, logger)
         result["season_result"] = season_result
         result["status"] = "ok"
     except Exception:
         logger.exception(f"Season {location} {year} failed with an unhandled exception.")
     finally:
+        if sem:
+            sem.release()
         gc.collect()
         if _HAS_TORCH and torch.cuda.is_available():
             torch.cuda.empty_cache()
@@ -575,17 +483,21 @@ def _run_one_job(job: dict) -> dict:
     return result
 
 
-def main():
-    cfg = CONFIG
+def run_experiment(cfg: dict):
+    """Run every (location, year) season of an experiment in parallel across the configured GPUs."""
     os.makedirs(cfg["SCRATCH_DIR"], exist_ok=True)
     os.makedirs(cfg["RESULTS_DIR"], exist_ok=True)
 
     run_tag = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    jobs_spec = [(location, year) for location in cfg["LOCATIONS"] for year in cfg["YEARS"]]
+    jobs_spec = [tuple(j) for j in cfg["JOBS"]] if cfg.get("JOBS") else \
+        [(location, year) for location in cfg["LOCATIONS"] for year in cfg["YEARS"]]
 
     gpu_ids = cfg["GPU_IDS"]
     instances_per_gpu = cfg["INSTANCES_PER_GPU"]
+
+    manager = mp.Manager()
+    gpu_semaphores = {gid: manager.Semaphore(instances_per_gpu) for gid in set(gpu_ids)}
 
     jobs = [
         {"cfg": cfg, "location": location, "year": year,
@@ -594,14 +506,19 @@ def main():
         for i, (location, year) in enumerate(jobs_spec)
     ]
 
-    print(f"Running {len(jobs)} season(s) in parallel:")
+    for job in jobs:
+        job["semaphore"] = gpu_semaphores[job["gpu_id"]]
+
+    print(f"Running {len(jobs)} season(s) in parallel (GPUs: {gpu_ids}):")
     for j in jobs:
         print(f"  {j['location']} {j['year']} -> GPU {j['gpu_id']}")
 
     all_results = []
+    max_workers = len(gpu_ids) * instances_per_gpu
 
-    with ProcessPoolExecutor(max_workers=len(gpu_ids) * instances_per_gpu) as executor:
+    with ProcessPoolExecutor(max_workers=max_workers, mp_context=mp.get_context('spawn')) as executor:
         futures = {executor.submit(_run_one_job, job): job for job in jobs}
+
         for future in as_completed(futures):
             job = futures[future]
             try:
@@ -623,12 +540,12 @@ def main():
     for r in all_results:
         if r["status"] == "ok" and r["season_result"] is not None:
             sr = r["season_result"]
+            diag = sr.get("final_diagnostics") or {}
             print(f"{r['location']} {r['year']} (GPU {r['gpu_id']}): "
                   f"yield={sr['final_yield_kg_ha']:.0f} kg/ha, "
-                  f"reward=Rs.{sr['final_reward_breakdown']['reward']:.2f} | log: {r.get('log_path')}")
+                  f"reward=Rs.{sr['final_reward_breakdown']['reward']:.2f}, "
+                  f"drainage={diag.get('total_drainage_mm', 0.0):.2f} mm, "
+                  f"NO3_leaching={diag.get('total_leach_no3_nh4', 0.0):.2f} kg/ha | log: {r.get('log_path')}")
         else:
             print(f"{r['location']} {r['year']} (GPU {r['gpu_id']}): FAILED | log: {r.get('log_path')}")
 
-
-if __name__ == "__main__":
-    main()

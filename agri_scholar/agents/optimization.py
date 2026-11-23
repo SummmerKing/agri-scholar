@@ -8,10 +8,10 @@ Each trial is scored by the VFA through APSIM.
 import logging
 import optuna
 
-from verification_feedback_agent import VerificationFeedbackAgent
-from simulation_engine import (SimulationResult, ActionCaps, resolve_dose_window,
+from agri_scholar.agents.verification_feedback import VerificationFeedbackAgent
+from agri_scholar.simulation.engine import (SimulationResult, ActionCaps, resolve_dose_window,
                                MIN_PHYSICAL_UREA_KG)
-from seeding import derive_seed
+from agri_scholar.seeding import derive_seed
 
 log = logging.getLogger("agri_sigra")
 optuna.logging.set_verbosity(optuna.logging.WARNING)

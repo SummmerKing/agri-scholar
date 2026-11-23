@@ -8,7 +8,7 @@ import datetime
 import json
 import logging
 
-from llm_backend import LocalLLM
+from agri_scholar.llm import LocalLLM
 
 log = logging.getLogger("agri_sigra")
 

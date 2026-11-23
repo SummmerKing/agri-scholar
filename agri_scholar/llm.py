@@ -5,7 +5,7 @@ import logging
 import torch
 from transformers import AutoProcessor, AutoModelForCausalLM
 
-from seeding import derive_seed
+from agri_scholar.seeding import derive_seed
 
 log = logging.getLogger("agri_sigra")
 

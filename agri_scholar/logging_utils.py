@@ -28,7 +28,7 @@ def get_logger(logger_name: str = DEFAULT_LOGGER_NAME, run_tag: str = None,
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    # file handler first: run.py reads logger.handlers[0].baseFilename
+    # file handler first: the pipeline reads logger.handlers[0].baseFilename
     file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
     file_handler.setFormatter(fmt)
     file_handler.setLevel(level)
