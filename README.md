@@ -1,12 +1,8 @@
 # Agri-SCHOLAR
 
-[![tests](https://github.com/SummmerKing/agri-scholar/actions/workflows/tests.yml/badge.svg)](https://github.com/SummmerKing/agri-scholar/actions/workflows/tests.yml)
+This repository contains the code and results for the paper "Agri-SCHOLAR: Simulation-Grounded In-Season Rolling Advisories for Agricultural Crops Using LLM-Bounded Optimization" by Geetha Charan, Vedant Balasubramaniam, Manojkumar Patil, V. Priyanka, Rohit P. Suresh, Kodur Sai Vinay Sathvik, Mohammad Sufyan Azam and Y. Narahari, Game Theory Lab, IISc [(arXiv:2610.31003)](https://arxiv.org/abs/2610.31003). A PDF is in [`paper/`](paper/agri_scholar.pdf).
 
-**Simulation-grounded, in-season rolling advisories for agricultural crops using LLM-bounded optimization.**
-
-[Paper (arXiv:2610.31003)](https://arxiv.org/abs/2610.31003) · [PDF](paper/agri_scholar.pdf) · Game Theory Lab, IISc
-
-Agri-SCHOLAR issues a personalized crop advisory every week of the season. LLM agents propose agronomically sound bounds on the actions (urea and irrigation), an optimizer searches inside those bounds, and every candidate is checked in the APSIM NextGen crop simulator before it is issued. The agents only ever see weather that would be available on the decision day: observations to date, a degraded 7-day forecast, and an analog tail from the closest historical years.
+Agri-SCHOLAR issues a personalized crop advisory every week of the season. LLM agents propose agronomically sound bounds on the actions (urea and irrigation), an optimizer searches inside those bounds, and every candidate is checked in the APSIM NextGen crop simulator before it is issued. The agents only see weather that would be available on the decision day: observations to date, a degraded 7-day forecast, and an analog tail from the closest historical years.
 
 ![Agri-SCHOLAR architecture](docs/architecture.png)
 
@@ -22,7 +18,7 @@ Maize, 11 seasons (2015-2025) in an irrigated and a rainfed region of Karnataka,
 
 ![Yield per season, irrigated region](docs/yield_irrigated.png)
 
-## How it works
+## Method
 
 | Agent | Role |
 | --- | --- |
@@ -40,25 +36,21 @@ end:         replay the issued plan in APSIM under the observed weather
 
 The reward (Eqs. 2-14 of the paper) is revenue minus production cost minus sustainability penalties for waterlogging, nitrogen oversupply, deep drainage, nitrate leaching and soil carbon loss.
 
-## Repository layout
+## Repository Structure
 
-```
-agri_scholar/
-  config.py              default settings; experiment files override them
-  pipeline.py            season loop and parallel runner
-  agents/                preseason, context_retrieval, advisory_bounding, optimization,
-                         verification_feedback, fixed_bounds (no-LLM ablations)
-  simulation/            apsim (APSIM file editing and execution), engine (actions, caps),
-                         weather (weather arrays, forecast degradation), reward
-  llm.py                 shared, seeded Gemma instance
-configs/                 one JSON file per experiment in the paper
-scripts/                 PoP and conventional baselines, RAG corpus builder, tables, plots
-tests/                   checks that run without a GPU or APSIM
-apsimx/                  calibrated and PoP APSIM models
-data/weather_maize_pilot daily weather (.met) per location and year
-results/                 outputs of the runs reported in the paper
-run.py                   entry point
-```
+- **agri_scholar/config.py**: default settings, overridden by the experiment files.
+- **agri_scholar/pipeline.py**: the season loop and the parallel runner.
+- **agri_scholar/agents/**: the five agents, plus `fixed_bounds.py` for the no-LLM ablations.
+- **agri_scholar/simulation/**: APSIM file editing and execution, action handling and caps, weather construction and forecast degradation, and the reward.
+- **agri_scholar/llm.py**: the shared, seeded Gemma instance.
+- **configs/**: one JSON file per experiment in the paper.
+- **scripts/**: PoP and conventional baselines, the RAG corpus builder, tables and plots.
+- **tests/**: checks that run without a GPU or APSIM.
+- **apsimx/**: calibrated and PoP APSIM models.
+- **data/weather_maize_pilot/**: daily weather (.met) per location and year.
+- **results/**: outputs of the runs reported in the paper.
+- **paper/**: the paper PDF.
+- **run.py**: entry point.
 
 ## Setup
 
