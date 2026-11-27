@@ -62,7 +62,7 @@ The reward (Eqs. 2-14 of the paper) is revenue minus production cost minus susta
 | Hugging Face access to `google/gemma-4-E4B-it` | gated model: accept the licence, then `huggingface-cli login` |
 
 ```bash
-git clone https://github.com/SummmerKing/agri-scholar.git
+git clone https://github.com/KSVinaySathvik/agri-scholar.git
 cd agri-scholar
 pip install -r requirements.txt
 python -m pytest tests -q
